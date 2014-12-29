@@ -33,28 +33,30 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 
 	//creating the vehicle
 	
-	//_newPos = [getmarkerpos _markerREH,[0,800],random 360,0,[1,250],"B_Plane_CAS_01_F"] call SHK_pos;
+	//_newPos = [getmarkerpos _markerREH,[0,400],random 360,0] call SHK_pos;
+	_newPos = getmarkerpos "mob_rehine";
  	//_wreck = createVehicle ["B_Plane_CAS_01_F", _newPos, [], 0, "CAN_COLLIDE"];
 	//_wreck setDammage 1;
 	
 		
 	sleep 5;
 	
-	//_newPos2 = [_wreck,[200,300],random 360,0,[1,250],"B_Pilot_F"] call SHK_pos;
+	//_newPos2 = [_wreck,[200,300],random 360,0,[0,250],"B_Pilot_F"] call SHK_pos;
 	
-	_pilotgrp = createGroup WEST;
-	_rehine1 = _pilotgrp createUnit ["C_journalist_F", _newPos2, [], 0, "NONE"];
+	_pilotgrp = createGroup civilian;
+	_rehine1 = _pilotgrp createUnit ["C_journalist_F", _newPos, [], 0, "NONE"];
 	_rehine1 allowDamage false;
+	//nul = [getMarkerPos "mob_rehine",_rehine1,400,0] execVM "shk_buildingpos.sqf";
+	nul = [getpos _rehine1,_rehine1,20,0,[],true,true,[]] execVM "shk_buildingpos.sqf";
+	//_rehine1 disableAI "MOVE";
+	//_rehine1 disableAI "ANIM";
+	//_rehine1 setunitpos "middle";
+	//_rehine1 setcaptive true;
+	//removeAllWeapons _rehine1;
+	//removeHeadgear _rehine1;
+	//removeBackpack _rehine1;
+	//removeGoggles _rehine1;
 	
-	_rehine1 disableAI "MOVE";
-	_rehine1 disableAI "ANIM";
-	_rehine1 setunitpos "middle";
-	_rehine1 setcaptive true;
-	removeAllWeapons _rehine1;
-	removeHeadgear _rehine1;
-	removeBackpack _rehine1;
-	removeGoggles _rehine1;
-	nul = [getmarkerpos _markerREH,_rehine1,400,0] execVM "shk_buildingpos.sqf"
 	sleep 2;
 	eskortet = _rehine1;
 	publicVariable "eskortet";
@@ -64,7 +66,7 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 	_markerrehine setMarkerColor "ColorBlue";
 	_markerrehine setMarkerSize [0.7,0.7];
 	
-	_IRgren = createVehicle ["B_IRStrobe", _newPos2, [], 0, "NONE"];
+	//_IRgren = createVehicle ["B_IRStrobe", _newPos2, [], 0, "NONE"];
 	
 	sleep 5;
 	

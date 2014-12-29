@@ -247,7 +247,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=46;
+		items=48;
 		class Item0
 		{
 			position[]={14181.271,19.444246,16291.023};
@@ -537,6 +537,20 @@ class Mission
 			position[]={3249.7649,0.13650674,12879.28};
 			name="da_5";
 			type="Empty";
+		};
+		class Item46
+		{
+			position[]={16803.045,20.557533,12796.125};
+			name="rehin";
+			type="Empty";
+			colorName="ColorRed";
+		};
+		class Item47
+		{
+			position[]={18111.713,23.786585,15221.466};
+			name="rehin_1";
+			type="Empty";
+			colorName="ColorRed";
 		};
 	};
 };
