@@ -1,0 +1,60 @@
+﻿//http://community.bistudio.com/wiki/description.ext#Header_Class
+class header {
+	gametype = COOP;
+	minplayers = 1;
+	maxplayers = 32;
+	playerCountMultipleOf = 1;  //Coop type missions use 1, Team type missions use 2
+};
+
+author = engerek tarafından hazırlanmıştır.;
+onLoadMission = "www.turkarmabirligi.net";
+onLoadIntroTime = true;
+onLoadMissionTime = true;
+onLoadName = |TAB| Operasyon DİNAMİK;
+loadScreen = "";
+
+
+
+aiKills = 0;
+briefing = 1;
+debriefing = 1;
+respawn = 3;
+respawnDelay = 60;
+RespawnDialog = 0;
+disabledAI = 1;
+enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
+
+
+/*
+#include "ATM_airdrop\dialog.hpp"
+
+class CfgSounds
+{
+   sounds[] = {Vent,Vent2,Para};
+
+	class Vent {name="Vent";sound[]={ATM_airdrop\data\Vent.ogg,db-11,1.0};titles[] = {};};
+	class Vent2 {name="Vent2";sound[]={ATM_airdrop\data\Vent2.ogg,db-11,1.0};titles[] = {};};
+	class Para {name="Para";sound[]={ATM_airdrop\data\parachute.ogg,db-11,1.0};titles[] = {};};
+};
+
+class CfgDebriefing
+{  
+    class oyunsonu
+    {
+        title = "TEBRİKLER ";
+        subtitle = "";
+        description = "GÖREV BAŞARI İLE TAMAMLANDI";
+        pictureBackground = "";
+        picture = "b_inf";
+        pictureColor[] = {0.0,0.3,0.6,1};
+    };
+}; 
+
+#include "VAS\menu.hpp"
+
+class CfgFunctions
+{
+	#include "VAS\cfgfunctions.hpp"
+};
+*/

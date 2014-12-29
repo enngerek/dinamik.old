@@ -1,0 +1,5 @@
+_trg = createTrigger ["EmptyDetector", getMarkerPos _markerSO]; 
+	_trg setTriggerArea [500, 500, 0, false]; 
+	_trg setTriggerActivation ["GUER", "NOT PRESENT", false]; 
+	_trg setTriggerStatements ["this AND !alive _device", "", ""];
+	waitUntil {triggerActivated _trg};
