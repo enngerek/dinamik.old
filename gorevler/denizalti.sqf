@@ -21,7 +21,7 @@ _damrkSpawnTown = getMarkerPos _dasecilenarray;
 sleep 1;
 
 _markerDA = createMarker ["mob_da", _damrkSpawnTown];
-	_markerDA setMarkerType "o_inf";
+	_markerDA setMarkerType "o_naval";
 	_markerDA setMarkerColor "ColorRed";
 	_markerDA setMarkerText " Denizaltı sabotaj";
 	_markerDA setMarkerSize [1,1];
