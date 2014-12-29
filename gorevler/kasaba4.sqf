@@ -57,7 +57,14 @@ switch (_sectema) do
 	//_camonet = createVehicle ["CamoNet_OPFOR_big_F", getPos _mhq, [], 0, "CAN_COLLIDE"];
 	
 
-	_newPos2 = [getmarkerpos _markerCO,[100,300],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	_newPos2 = [getmarkerpos _markerCO,[101,301],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	sleep 2;
+	_newPos3 = [getmarkerpos _markerCO,[102,302],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	sleep 2;
+	_newPos4 = [getmarkerpos _markerCO,[103,303],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	sleep 2;
+	_newPos5 = [getmarkerpos _markerCO,[103,303],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	
 	
 	//_aracarrayind=["I_G_Offroad_01_armed_F","I_MRAP_03_hmg_F","I_APC_tracked_03_cannon_F","I_Truck_02_box_F","I_Truck_02_transport_F"];
 	//_aracarrayeast=["O_APC_Tracked_02_cannon_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_G_Offroad_01_armed_F","O_Truck_02_covered_F","O_Truck_02_transport_F","O_Truck_03_transport_F"];
@@ -70,12 +77,12 @@ switch (_sectema) do
 	[_newPos2, 10, "I_G_Offroad_01_armed_F", _ifv1] call BIS_fnc_spawnvehicle;
 	nul = [_ifv1,getPos _mhq, 250] call BIS_fnc_taskPatrol;
 	sleep 10;
-	[_newPos2, 10, "I_G_Offroad_01_armed_F", _ifv1] call BIS_fnc_spawnvehicle;
+	[_newPos3, 10, "I_G_Offroad_01_armed_F", _ifv1] call BIS_fnc_spawnvehicle;
 	sleep 10;
 	_ifv2 = createGroup EAST;
-	[_newPos2, 10, "O_G_Offroad_01_armed_F", _ifv2] call BIS_fnc_spawnvehicle;
+	[_newPos4, 10, "O_G_Offroad_01_armed_F", _ifv2] call BIS_fnc_spawnvehicle;
 	sleep 10;
-	[_newPos2, 10, "O_G_Offroad_01_armed_F", _ifv2] call BIS_fnc_spawnvehicle;
+	[_newPos5, 10, "O_G_Offroad_01_armed_F", _ifv2] call BIS_fnc_spawnvehicle;
 	
 	_grp1C = [getMarkerPos _markerCO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 ] call BIS_fnc_spawnGroup;
@@ -166,6 +173,12 @@ nul = [] execVM "gorev.sqf";
 	
 
 	_newPos2 = [getmarkerpos _markerCO,[150,300],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	sleep 2;
+	_newPos3 = [getmarkerpos _markerCO,[102,302],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	sleep 2;
+	//_newPos4 = [getmarkerpos _markerCO,[103,303],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	//sleep 2;
+	//_newPos5 = [getmarkerpos _markerCO,[103,303],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	
 	//_aracarrayind=["I_G_Offroad_01_armed_F","I_MRAP_03_hmg_F","I_APC_tracked_03_cannon_F","I_Truck_02_box_F","I_Truck_02_transport_F"];
 	//_aracarrayeast=["O_APC_Tracked_02_cannon_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_G_Offroad_01_armed_F","O_Truck_02_covered_F","O_Truck_02_transport_F","O_Truck_03_transport_F"];
@@ -178,7 +191,7 @@ nul = [] execVM "gorev.sqf";
 	[_newPos2, 10, "I_MRAP_03_hmg_F", _ifv1] call BIS_fnc_spawnvehicle;
 	nul = [_ifv1,getPos _mhq, 250] call BIS_fnc_taskPatrol;
 	sleep 10;
-	[_newPos2, 10, "I_MRAP_03_hmg_F", _ifv1] call BIS_fnc_spawnvehicle;
+	[_newPos3, 10, "I_MRAP_03_hmg_F", _ifv1] call BIS_fnc_spawnvehicle;
 	sleep 10;
 	/*_ifv2 = createGroup EAST;
 	[_newPos2, 10, "O_APC_Tracked_02_cannon_F", _ifv2] call BIS_fnc_spawnvehicle;
@@ -270,6 +283,12 @@ nul = [] execVM "gorev.sqf";
 	
 
 	_newPos2 = [getmarkerpos _markerCO,[50,250],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	sleep 2;
+	_newPos3 = [getmarkerpos _markerCO,[102,302],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	sleep 2;
+	_newPos4 = [getmarkerpos _markerCO,[103,303],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	sleep 2;
+	_newPos5 = [getmarkerpos _markerCO,[103,303],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	
 	//_aracarrayind=["I_G_Offroad_01_armed_F","I_MRAP_03_hmg_F","I_APC_tracked_03_cannon_F","I_Truck_02_box_F","I_Truck_02_transport_F"];
 	//_aracarrayeast=["O_APC_Tracked_02_cannon_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_G_Offroad_01_armed_F","O_Truck_02_covered_F","O_Truck_02_transport_F","O_Truck_03_transport_F"];
@@ -282,10 +301,10 @@ nul = [] execVM "gorev.sqf";
 	[_newPos2, 10, "I_MRAP_03_hmg_F", _ifv1] call BIS_fnc_spawnvehicle;
 	nul = [_ifv1,getPos _mhq, 250] call BIS_fnc_taskPatrol;
 	sleep 10;
-	[_newPos2, 10, "I_G_Offroad_01_armed_F", _ifv1] call BIS_fnc_spawnvehicle;
+	[_newPos3, 10, "I_G_Offroad_01_armed_F", _ifv1] call BIS_fnc_spawnvehicle;
 	sleep 10;
 	_ifv2 = createGroup EAST;
-	[_newPos2, 10, "O_APC_Tracked_02_cannon_F", _ifv2] call BIS_fnc_spawnvehicle;
+	[_newPos4, 10, "O_APC_Tracked_02_cannon_F", _ifv2] call BIS_fnc_spawnvehicle;
 	nul = [_ifv2,getPos _mhq, 250] call BIS_fnc_taskPatrol;
 	
 	_grp1C = [getMarkerPos _markerCO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]

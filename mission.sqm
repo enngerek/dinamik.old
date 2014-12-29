@@ -54,7 +54,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14179.86,19.54472,16285.779};
+					position[]={20662.701,3.6588997e-005,19528.643};
 					id=0;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -247,7 +247,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=40;
+		items=46;
 		class Item0
 		{
 			position[]={14181.271,19.444246,16291.023};
@@ -500,6 +500,42 @@ class Mission
 		{
 			position[]={23345.857,-0.13128474,14743.812};
 			name="mayin_10";
+			type="Empty";
+		};
+		class Item40
+		{
+			position[]={20648.891,0.0030104851,19502.801};
+			name="da";
+			type="Empty";
+		};
+		class Item41
+		{
+			position[]={17756.221,-0.035309643,18186.496};
+			name="da_1";
+			type="Empty";
+		};
+		class Item42
+		{
+			position[]={16598.471,-0.069499567,12301.253};
+			name="da_2";
+			type="Empty";
+		};
+		class Item43
+		{
+			position[]={12746.119,-0.10590078,14210.791};
+			name="da_3";
+			type="Empty";
+		};
+		class Item44
+		{
+			position[]={27643.572,-0.028934507,24520.908};
+			name="da_4";
+			type="Empty";
+		};
+		class Item45
+		{
+			position[]={3249.7649,0.13650674,12879.28};
+			name="da_5";
 			type="Empty";
 		};
 	};

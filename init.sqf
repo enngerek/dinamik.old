@@ -7,9 +7,11 @@ call compile preprocessfile "addactions.sqf";
 
 
 //nul = [] execVM "gorevler\uav2.sqf";
-nul = [] execVM "gorevler\mak.sqf";
-nul = [] execVM "gorevler\kasaba4.sqf";
-nul = [] execVM "gorevler\mayin.sqf";
+//nul = [] execVM "gorevler\mak.sqf";
+//nul = [] execVM "gorevler\kasaba4.sqf";
+//nul = [] execVM "gorevler\mayin.sqf";
+nul = [] execVM "gorevler\denizalti.sqf";
 
 //testgithub;
+//test2;
 

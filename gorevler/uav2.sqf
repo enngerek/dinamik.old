@@ -19,6 +19,15 @@ _mrkSpawnPos = getMarkerPos _uavsecilenarray;
 	_markerSO setMarkerText "UAV kara kutusunu ele geçir";
 	_markerSO setMarkerSize [700,700];
 	
+	sleep 2;
+	
+	_trg = createTrigger ["EmptyDetector", getMarkerPos _markerSO]; 
+	_trg setTriggerArea [500, 500, 0, false]; 
+	_trg setTriggerActivation ["independent", "NOT PRESENT", false]; 
+	_trg setTriggerStatements ["this AND !alive _device", "", ""];
+	
+	sleep 2;
+	
 	_null = [player, "mob_uav", ["Düşmana ait bir insansız hava aracı düşürülmüştür.Derhal bölgeye intikal ederek harddiskini kopyaladıktan sonra bölgedeki düşman unsurları temizleyin.", "UAV kara kutusunu ele geçir", "UAV kara kutusunu ele geçir"], getMarkerPos "mob_uav", false] spawn BIS_fnc_taskCreate;
 	_null = ["mob_uav", "CREATED"] spawn BIS_fnc_taskSetState;
 	
@@ -64,10 +73,7 @@ _mrkSpawnPos = getMarkerPos _uavsecilenarray;
 
 	//waitUntil { !alive _device };
 	
-	_trg = createTrigger ["EmptyDetector", getMarkerPos _markerSO]; 
-	_trg setTriggerArea [500, 500, 0, false]; 
-	_trg setTriggerActivation ["independent", "NOT PRESENT", false]; 
-	_trg setTriggerStatements ["this AND !alive _device", "", ""];
+	
 	
 	waitUntil {triggerActivated _trg};
 	
