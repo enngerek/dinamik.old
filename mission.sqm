@@ -504,14 +504,14 @@ class Mission
 		};
 		class Item40
 		{
-			position[]={20548.959,0.080360666,19665.283};
+			position[]={21179.467,-0.048140027,20202.596};
 			name="da";
 			type="Empty";
-			angle=-41.388504;
+			angle=-95.673729;
 		};
 		class Item41
 		{
-			position[]={17768.473,-0.090637863,18307.445};
+			position[]={17854.383,-0.015843287,18443.52};
 			name="da_1";
 			type="Empty";
 			angle=-27.448608;

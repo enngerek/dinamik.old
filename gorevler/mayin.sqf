@@ -80,12 +80,12 @@ _markerMO = createMarker ["mob_mines", _mrkSpawnPos];
 	{deleteVehicle _x} forEach units _helo2;
 	deleteGroup _helo2;
 
-	_myHint ="Good Job!";
+	_myHint ="Tebrikler!";
 	GlobalHint = _myHint;
 	publicVariable "GlobalHint";
 	hintsilent parseText _myHint;
 
-	_mySChat ="OBJECTIVE COMPLETED";
+	_mySChat ="Görev Tamamlandı";
 	GlobalSCHat = _mySChat;
 	publicVariable "GlobalSCHat";
 	player sideChat _mySChat;
@@ -159,12 +159,12 @@ _markerMO = createMarker ["mob_mines", _mrkSpawnPos];
 	{deleteVehicle _x} forEach units _helo2;
 	deleteGroup _helo2;
 
-	_myHint ="Good Job!";
+	_myHint ="Tebrikler!";
 	GlobalHint = _myHint;
 	publicVariable "GlobalHint";
 	hintsilent parseText _myHint;
 
-	_mySChat ="OBJECTIVE COMPLETED";
+	_mySChat ="Görev Tamamlandı";
 	GlobalSCHat = _mySChat;
 	publicVariable "GlobalSCHat";
 	player sideChat _mySChat;
@@ -237,12 +237,12 @@ _markerMO = createMarker ["mob_mines", _mrkSpawnPos];
 	//{deleteVehicle _x} forEach units _helo2;
 	//deleteGroup _helo2;
 
-	_myHint ="Good Job!";
+	_myHint ="Tebrikler!";
 	GlobalHint = _myHint;
 	publicVariable "GlobalHint";
 	hintsilent parseText _myHint;
 
-	_mySChat ="OBJECTIVE COMPLETED";
+	_mySChat ="Görev Tamamlandı";
 	GlobalSCHat = _mySChat;
 	publicVariable "GlobalSCHat";
 	player sideChat _mySChat;

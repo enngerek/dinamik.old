@@ -248,22 +248,26 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	//_hedef2 = createVehicle ["Submarine_01_F", getmarkerpos _markerDA,[], 0, "NONE"];
 	//_camonet = createVehicle ["CamoNet_OPFOR_big_F", getPos _mhq, [], 0, "CAN_COLLIDE"];
 	
-	_possu = [getmarkerpos _markerDA,[100,200],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
+	_possu = [getmarkerpos _markerDA,[125,200],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
 	sleep 5;
-	_possu2 = [getmarkerpos _markerDA,[90,201],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
+	_possu2 = [getmarkerpos _markerDA,[125,201],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
 	sleep 5;
-	_newPos1 = [getmarkerpos _markerDA,[149,299],random 360,0,[]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	_newPos1 = [getmarkerpos _markerDA,[160,350],random 360,0,[]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	sleep 5;
 	_newPos2 = [getmarkerpos _markerDA,[150,300],random 360,0,[]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	sleep 5;
 	_devnok = [getmarkerpos _markerDA,[30,60],random 360,0,[]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	
 	_dev1 = createGroup resistance;
-	[_possu, 10, "I_Boat_Armed_01_minigun_F", _dev1] call BIS_fnc_spawnvehicle;
-	sleep 5;
-	[_possu2, 10, "I_Heli_light_03_F", _dev1] call BIS_fnc_spawnvehicle;
+		[_possu2, 10, "I_Heli_light_03_F", _dev1] call BIS_fnc_spawnvehicle;
 	sleep 5;
 	nul = [_dev1,getMarkerPos "mob_da", 500] call BIS_fnc_taskPatrol;
+	
+	_dev3 = createGroup resistance;
+	[_possu, 10, "I_Boat_Armed_01_minigun_F", _dev3] call BIS_fnc_spawnvehicle;
+	sleep 5;
+	nul = [_dev3,getMarkerPos "mob_da", 500] call BIS_fnc_taskPatrol;
+	
 	
 	_dev2 = createGroup resistance;
 	[_newPos1, 10, "I_APC_tracked_03_cannon_F", _dev2] call BIS_fnc_spawnvehicle;
