@@ -11,19 +11,18 @@ _mayinsecilenarray = _mayinmarkerarray call BIS_fnc_selectRandom;
 _mayinmarkerarray=_mayinmarkerarray - [_mayinsecilenarray];
 _mrkSpawnPos = getMarkerPos _mayinsecilenarray;
 
-
-
+sleep 2;
 
 _markerMO = createMarker ["mob_mines", _mrkSpawnPos];
 	_markerMO setMarkerType "Minefield";
 	_markerMO setMarkerColor "ColorRed";
 	_markerMO setMarkerText " Mayın Temizleme";
 	_markerMO setMarkerSize [1,1];
-	
+	sleep 1;
 	_null = [west, "mob_mines", ["Su altı mayınlarını etkisiz hale getirin.", "Mayın Temizle", "Mayın Temizle"], getMarkerPos "mob_mines", false] spawn BIS_fnc_taskCreate;
 	_null = ["mob_mines", "CREATED"] spawn BIS_fnc_taskSetState;
 	
-	sleep 30;
+	sleep 10;
 
 	//creating the vehicle
 	
@@ -43,7 +42,7 @@ _markerMO = createMarker ["mob_mines", _mrkSpawnPos];
 	_mine5 setPosATL [(getMarkerpos _markerMO select 0) + 20,getMarkerpos _markerMO select 1,(getPosATL _mine5 select 2) - 2];
 	
 	_grp1S = [getMarkerPos _markerMO, independent , (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "SpecOps" >> "HAF_DiverTeam")] call BIS_fnc_spawnGroup;
-	//nul = [_grp1S,getPos _mine5, 20] call BIS_fnc_taskPatrol;
+
 	[_grpr1S, getPos _mine1] call BIS_fnc_taskDefend;
 	_grp2S = [getMarkerPos _markerMO, independent , (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "SpecOps" >> "HAF_DiverTeam")] call BIS_fnc_spawnGroup;
 	nul = [_grp2S,getPos _mine5, 20] call BIS_fnc_taskPatrol;
