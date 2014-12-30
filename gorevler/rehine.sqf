@@ -78,6 +78,7 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 	
 _grpr1 = [_korumapos, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]] call BIS_fnc_spawnGroup;
 //nul = [_grpr1,getPos _rehine1, 150] call BIS_fnc_taskPatrol;
+[_grpr1, getPos _rehine1] call BIS_fnc_taskDefend;
 sleep 1;
 _grpr2 = [_korumapos1, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]] call BIS_fnc_spawnGroup;
 nul = [_grpr2,getPos _rehine1, 150] call BIS_fnc_taskPatrol;
