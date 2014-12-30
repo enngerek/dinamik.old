@@ -47,7 +47,7 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 	_rehine1 = _pilotgrp createUnit ["C_journalist_F", _newPos, [], 0, "NONE"];
 	_rehine1 allowDamage false;
 	//nul = [getMarkerPos "mob_rehine",_rehine1,400,0] execVM "shk_buildingpos.sqf";
-	nul = [getpos _rehine1,_rehine1,20,0,[],true,true,[]] execVM "shk_buildingpos.sqf";
+	nul = [getpos _rehine1,_rehine1,500,0,[],true,true,[]] execVM "shk_buildingpos.sqf";
 	//_rehine1 disableAI "MOVE";
 	//_rehine1 disableAI "ANIM";
 	//_rehine1 setunitpos "middle";
