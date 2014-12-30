@@ -43,16 +43,17 @@ _markerMO = createMarker ["mob_mines", _mrkSpawnPos];
 	_mine5 setPosATL [(getMarkerpos _markerMO select 0) + 20,getMarkerpos _markerMO select 1,(getPosATL _mine5 select 2) - 2];
 	
 	_grp1S = [getMarkerPos _markerMO, independent , (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "SpecOps" >> "HAF_DiverTeam")] call BIS_fnc_spawnGroup;
-	
+	//nul = [_grp1S,getPos _mine5, 20] call BIS_fnc_taskPatrol;
+	[_grpr1S, getPos _mine1] call BIS_fnc_taskDefend;
 	_grp2S = [getMarkerPos _markerMO, independent , (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "SpecOps" >> "HAF_DiverTeam")] call BIS_fnc_spawnGroup;
-	nul = [_grp2S,getPos _mine5, 75] call BIS_fnc_taskPatrol;
+	nul = [_grp2S,getPos _mine5, 20] call BIS_fnc_taskPatrol;
 	
 	//_mayaracarray=["I_Heli_light_03_F","I_Heli_Transport_02_F"];
 	//_maysecilenarac1=_mayaracarray call BIS_fnc_selectRandom;
 	
 	_helo2 = createGroup resistance;
-	[getMarkerpos _markerMO, 10, "I_Heli_light_03_F", _helo2] call BIS_fnc_spawnvehicle;
-	nul = [_helo2,getMarkerpos _markerMO, 500] call BIS_fnc_taskPatrol;
+	[getMarkerpos "mob_mines", 10, "I_Heli_light_03_F", _helo2] call BIS_fnc_spawnvehicle;
+	nul = [_helo2,getMarkerpos "mob_mines", 500] call BIS_fnc_taskPatrol;
 
 	waitUntil {{mineActive _x} count [_mine1,_mine2,_mine3,_mine4,_mine5] == 0};
 	
