@@ -22,9 +22,9 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 
 	_markerREH = createMarker ["mob_rehine", _rehmrkSpawnPos];
 	_markerREH setMarkerShape "ellipse";
-	_markerREH setMarkerColor "ColorRed";
+	_markerREH setMarkerColor "ColorYellow";
 	_markerREH setMarkerText " Rehine Durumu";
-	_markerREH setMarkerSize [500,500];
+	_markerREH setMarkerSize [300,300];
 	
 	_null = [player, "mob_rehine", ["Rehin Alınan gazeteciyi kurtarın", "Rehineyi kurtar", "Rehineyi kurtar"], getMarkerPos "mob_rehine", false] spawn BIS_fnc_taskCreate;
 	_null = ["mob_rehine", "CREATED"] spawn BIS_fnc_taskSetState;
@@ -69,8 +69,11 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 	//_IRgren = createVehicle ["B_IRStrobe", _newPos2, [], 0, "NONE"];
 	
 	sleep 5;
+	_korumapos=[getmarkerpos _markerDA,[0,50],random 360,0,[],"B_MRAP_01_F"] call SHK_pos;
+	_korumapos1=[getmarkerpos _markerDA,[0,100],random 360,0,[],"B_MRAP_01_F"] call SHK_pos;
+	_korumapos2=[getmarkerpos _markerDA,[0,75],random 360,0,[],"B_MRAP_01_F"] call SHK_pos;
 	
-	//_grp1S = [getPos _wreck, independent, (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad")] call BIS_fnc_spawnGroup;
+	//_grp1S = [_korumapos, independent, (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad")] call BIS_fnc_spawnGroup;
 	//nul = [_grp1S,getPos _wreck, 300] call BIS_fnc_taskPatrol;
 	
 	//_grp2S = [getPos _wreck, independent, (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad_Weapons")] call BIS_fnc_spawnGroup;
