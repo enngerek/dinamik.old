@@ -279,5 +279,5 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 nul = [] execVM "gorev.sqf";
 	};
 };
-
+//test;
 	
