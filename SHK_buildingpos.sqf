@@ -5,7 +5,7 @@
   Version: 0.12
 
   Syntax:
-    nul = [position,unitList,radius,priority,height,disableMove,stance,hide] execVM "shk_buildingpos.sqf"
+    nul = [position,unitList,radius,priority,height,disableMove,stance,hide] execvm "shk_buildingpos.sqf"
   
   Required Parameters:
     Origo        Position       Position from where building positions are searched for.
@@ -27,10 +27,10 @@
                    Condition    Condition to reveal the hidden units.
     
   Examples:
-    nul = [getpos hq,[man1,man2,man3]] execVM "shk_buildingpos.sqf"
-    nul = [getpos house,[sniper1,sniper2],20,2] execVM "shk_buildingpos.sqf"
-    nul = [getpos house,units grpAlpha,30,0,[1,4]] execVM "shk_buildingpos.sqf"
-    nul = [getpos house,bmen1,20,0,[],true,true,[0.5,"SHK_revealHouseUnits"]] execVM "shk_buildingpos.sqf"
+    nul = [getpos hq,[man1,man2,man3]] execvm "shk_buildingpos.sqf"
+    nul = [getpos house,[sniper1,sniper2],20,2] execvm "shk_buildingpos.sqf"
+    nul = [getpos house,units grpAlpha,30,0,[1,4]] execvm "shk_buildingpos.sqf"
+    nul = [getpos house,bmen1,20,0,[],true,true,[0.5,"SHK_revealHouseUnits"]] execvm "shk_buildingpos.sqf"
 
   Todo:
     Patrol (switch positions)
@@ -147,7 +147,7 @@ if isserver then {
         _x setpos _pos;
         _x setformdir _dir;
         if _disableMove then { doStop _x; };
-        if _stance then { _x setunitpos "MIDDLE" };
+        if _stance then { _x setunitpos "UP" };
       };
     };
   } foreach _men;
