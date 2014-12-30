@@ -73,7 +73,7 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	
 	_grp1S = [_newPos2, independent, (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad")] call BIS_fnc_spawnGroup;
 	//nul = [_grp1S,_devnok, 300] call BIS_fnc_taskPatrol;
-	[_grprS, getPos _hedef1] call BIS_fnc_taskDefend;
+	[_grp1S, getPos _hedef1] call BIS_fnc_taskDefend;
 	
 	_grp2S = [_newPos1, independent, (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad_Weapons")] call BIS_fnc_spawnGroup;
 	nul = [_grp2S,_devnok, 150] call BIS_fnc_taskPatrol;
