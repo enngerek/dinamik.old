@@ -8,6 +8,7 @@ Görev kısaca Altis Haritası genelinde tamamlanacak bir seri yan görevden olu
 - Oluşturulan görev kendi içinde araç, gereç sayısı ve türü ile görev yeri açısından dinamiktir.  
 - Her defasında bir yan görev türü oluşturulmakta bu görev tamamlandıktan sonra yenisi havuzdan rastgele seçilmektedir.  
 - 4 kişilik Düşman Oyuncu slotu vardır.İstenirse 4 oyuncu bu slotlarda oyuna girerek karşı tarafın görevleri tamamlamasını engellemeye çalışabilir.(COOP-TVT) .
+- Sivil yaşam ve atmosferi
 
 **Yan Görev Türleri**
 
