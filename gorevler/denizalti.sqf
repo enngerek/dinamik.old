@@ -40,10 +40,7 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	
 	sleep 10;
 	
-	_trgda = createTrigger ["EmptyDetector", getMarkerPos _markerDA]; 
-	_trgda setTriggerArea [500, 500, 0, false]; 
-	_trgda setTriggerActivation ["independent", "NOT PRESENT", false]; 
-	_trgda setTriggerStatements ["this AND !alive _device", "", ""];
+
 	
 	sleep 10;
 
@@ -51,6 +48,10 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	
 		_hedef1 = createVehicle ["I_SDV_01_F", getmarkerpos _markerDA,[], 0, "NONE"];
 	sleep 2;
+	_trgda = createTrigger ["EmptyDetector", getMarkerPos _markerDA]; 
+	_trgda setTriggerArea [500, 500, 0, false]; 
+	_trgda setTriggerActivation ["independent", "NOT PRESENT", false]; 
+	_trgda setTriggerStatements ["this AND !alive _hedef1", "", ""];
 	
 	//_hedef2 = createVehicle ["I_SDV_01_F", getmarkerpos _markerDA,[], 0, "NONE"];
 	//_camonet = createVehicle ["CamoNet_OPFOR_big_F", getPos _mhq, [], 0, "CAN_COLLIDE"];
@@ -125,10 +126,7 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	
 	sleep 10;
 	
-	_trgda = createTrigger ["EmptyDetector", getMarkerPos _markerDA]; 
-	_trgda setTriggerArea [500, 500, 0, false]; 
-	_trgda setTriggerActivation ["independent", "NOT PRESENT", false]; 
-	_trgda setTriggerStatements ["this AND !alive _device", "", ""];
+	
 	
 	sleep 10;
 
@@ -136,6 +134,10 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	
 		_hedef1 = createVehicle ["I_SDV_01_F", getmarkerpos _markerDA,[], 0, "NONE"];
 	sleep 2;
+	_trgda = createTrigger ["EmptyDetector", getMarkerPos _markerDA]; 
+	_trgda setTriggerArea [500, 500, 0, false]; 
+	_trgda setTriggerActivation ["independent", "NOT PRESENT", false]; 
+	_trgda setTriggerStatements ["this AND !alive _hedef1", "", ""];
 	
 	//_hedef2 = createVehicle ["I_SDV_01_F", getmarkerpos _markerDA,[], 0, "NONE"];
 	//_camonet = createVehicle ["CamoNet_OPFOR_big_F", getPos _mhq, [], 0, "CAN_COLLIDE"];
@@ -160,7 +162,7 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	__dev2 = createGroup resistance;
 	[_newPos1, 10, "I_APC_tracked_03_cannon_F", _dev2] call BIS_fnc_spawnvehicle;
 	sleep 10;
-	[_newPos2, 10, "I_APC_Wheeled_03_cannon_F", _dev2] call BIS_fnc_spawnvehicle;
+	[_newPos2, 10, "I_Heli_light_03_F", _dev2] call BIS_fnc_spawnvehicle;
 	nul = [_dev2,getPos _hedef1, 250] call BIS_fnc_taskPatrol;
 	
 	_grp1S = [_newPos2, independent, (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad")] call BIS_fnc_spawnGroup;
@@ -193,6 +195,7 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	deleteGroup _dev1;
 nul = [] execVM "gorev.sqf";
 	};
+	
 case ("temada3"):
 	{
 	sleep 1;
@@ -210,10 +213,7 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	
 	sleep 10;
 	
-	_trgda = createTrigger ["EmptyDetector", getMarkerPos _markerDA]; 
-	_trgda setTriggerArea [500, 500, 0, false]; 
-	_trgda setTriggerActivation ["independent", "NOT PRESENT", false]; 
-	_trgda setTriggerStatements ["this AND !alive _device", "", ""];
+
 	
 	sleep 10;
 
@@ -221,6 +221,10 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	
 		_hedef1 = createVehicle ["I_SDV_01_F", getmarkerpos _markerDA,[], 0, "NONE"];
 	sleep 2;
+	_trgda = createTrigger ["EmptyDetector", getMarkerPos _markerDA]; 
+	_trgda setTriggerArea [500, 500, 0, false]; 
+	_trgda setTriggerActivation ["independent", "NOT PRESENT", false]; 
+	_trgda setTriggerStatements ["this AND !alive _hedef1", "", ""];
 	
 	//_hedef2 = createVehicle ["I_SDV_01_F", getmarkerpos _markerDA,[], 0, "NONE"];
 	//_camonet = createVehicle ["CamoNet_OPFOR_big_F", getPos _mhq, [], 0, "CAN_COLLIDE"];
@@ -238,7 +242,7 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	_dev1 = createGroup resistance;
 	[_possu, 10, "I_Boat_Armed_01_minigun_F", _dev1] call BIS_fnc_spawnvehicle;
 	sleep 5;
-	[_possu2, 10, "I_Boat_Armed_01_minigun_F", _dev1] call BIS_fnc_spawnvehicle;
+	[_possu2, 10, "I_Heli_light_03_F", _dev1] call BIS_fnc_spawnvehicle;
 	sleep 5;
 	nul = [_dev1,getPos _hedef1, 250] call BIS_fnc_taskPatrol;
 	
