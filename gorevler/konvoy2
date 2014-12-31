@@ -68,10 +68,12 @@ _konvoyrota = [konvoy,"mob_konbit",30] spawn ws_fnc_taskConvoy;
 _trgkon = createTrigger ["EmptyDetector", getMarkerPos _markerCO]; 
 	_trgkon setTriggerArea [350, 350, 0, false]; 
 	_trgkon setTriggerActivation ["resistance", "NOT PRESENT", false]; 
-	_trgkon setTriggerStatements ["not alive konvoy and not alive konvoy_1 and not alive konvoy_3", "", ""]; 
+	_trgkon setTriggerStatements ["not alive konvoy and not alive konvoy_1 and not alive konvoy_3",
+	"_null = ['mob_konbasla', 'SUCCEEDED'] spawn BIS_fnc_taskSetState;", ""]; 
 
 	//enemyDead = false; 
-	waitUntil {triggerActivated _trgkon}; 
+	//waitUntil {triggerActivated _trgkon}; 
+	//_null = ["mob_konbasla", "SUCCEEDED"] spawn BIS_fnc_taskSetState;
 
 	
 	};
