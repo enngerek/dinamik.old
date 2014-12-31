@@ -1,1 +1,34 @@
 //konvoy görevi
+_kontemaarray=["kontema1","kontema2","kontema3"];
+_seckontema= _kontemaarray call BIS_fnc_selectRandom;
+
+
+
+switch (_seckontema) do
+{
+	case ("kontema1"):
+	{
+	_mrkSpawnkonbasla = getMarkerPos "konvoy1basla";
+	sleep 1;
+	_mrkSpawnkonbitis = getMarkerPos "konvoy1bitis";
+	sleep 1;
+	
+	_markerKO = createMarker ["mob_konbasla", _mrkSpawnkonbasla];
+	_markerKO setMarkerType "o_inf";
+	_markerKO setMarkerColor "ColorRed";
+	_markerKO setMarkerText " Konvoy Başlangıç Noktası";
+	_markerKO setMarkerSize [1,1];
+	sleep 2;
+	
+	_markerKO = createMarker ["mob_konbit", _mrkSpawnkonbitis];
+	_markerKO setMarkerType "o_inf";
+	_markerKO setMarkerColor "ColorRed";
+	_markerKO setMarkerText " Konvoy varış Noktası";
+	_markerKO setMarkerSize [1,1];
+	_null = [player, "mob_konbasla", ["Silah ve muhimmat yüklü bir konvoyun yola çıktığına dair istihbarat alınmıştır.Konvoyu yolda yakalayarak Muhimmat Kamyonlarını imha edin.", "Konvoy baskını", "Konvoy baskını"], getMarkerPos "mob_konbasla", false] spawn BIS_fnc_taskCreate;
+	_null = ["mob_konbasla", "CREATED"] spawn BIS_fnc_taskSetState;
+	
+	
+	};
+	
+	};
