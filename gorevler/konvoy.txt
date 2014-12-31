@@ -50,7 +50,7 @@ switch (_seckontema) do
 	_yrdsof1 moveIncargo _arac1;_yrdsof2 moveIncargo _arac2;_yrdsof3 moveIncargo _arac3;
 	sleep 1;
 	
-_arac1 setVehicleVarName "konvoy_1"; 
+_arac1 setVehicleVarName "konvoy"; 
 konvoy_1 = _arac1;
 sleep 1;
 _arac2 setVehicleVarName "konvoy_2"; 
@@ -59,6 +59,8 @@ sleep 1;
 _arac3 setVehicleVarName "konvoy_3"; 
 konvoy_3 = _arac3;
 sleep 1;
+
+konvoyrota = [konvoy,"mob_konbit",30] spawn ws_fnc_taskConvoy;
 	
 	};
 	case ("kontema2"):
