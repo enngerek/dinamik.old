@@ -47,7 +47,7 @@ switch (_seckontema) do
 	_yrdsof3 = createVehicle ["I_G_Soldier_M_F", getmarkerpos "mob_konbasla",[], 0, "NONE"];
 	sleep 1;
 	_sof1 moveInDriver _arac1;_sof2 moveInDriver _arac2;_sof3 moveInDriver _arac3;
-	_yrdsof1 moveInDriver _arac1;_yrdsof2 moveInDriver _arac2;_yrdsof3 moveInDriver _arac3;
+	_yrdsof1 moveIncargo _arac1;_yrdsof2 moveIncargo _arac2;_yrdsof3 moveIncargo _arac3;
 	sleep 1;
 	
 _arac1 setVehicleVarName "konvoy_1"; 
