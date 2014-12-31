@@ -1,13 +1,13 @@
 //konvoy görevi
-_kontemaarray=["kontema1","kontema2","kontema3"];
-_seckontema= _kontemaarray call BIS_fnc_selectRandom;
+//_kontemaarray=["kontema1","kontema2","kontema3"];
+//_seckontema= _kontemaarray call BIS_fnc_selectRandom;
 
 
 
-switch (_seckontema) do
-{
-	case ("kontema1"):
-	{
+//switch (_seckontema) do
+//{
+	//case ("kontema1"):
+	//{
 	_mrkSpawnkonbasla = getMarkerPos "konvoy1basla";
 	sleep 1;
 	_mrkSpawnkonbitis = getMarkerPos "konvoy1bitis";
@@ -82,8 +82,21 @@ _trgkon = createTrigger ["EmptyDetector", getMarkerPos _markerCO];
 	//enemyDead = false; 
 	waitUntil {triggerActivated _trgkon}; 
 	_null = ["mob_konbasla", "SUCCEEDED"] spawn BIS_fnc_taskSetState;
-
+	sleep 5;
+deleteMarker _markerKO;
+deleteMarker _markerKO2;
+deleteVehicle _trgkon;
+{deleteVehicle _x} forEach crew _arac1 + [_arac1];
+{deleteVehicle _x} forEach crew _arac2 + [_arac2];
+{deleteVehicle _x} forEach crew _arac3 + [_arac3];
+{deleteVehicle _x} forEach crew _koruma1 + [_koruma1];
+{deleteVehicle _x} forEach crew _koruma2 + [_koruma2];
+{deleteVehicle _x} forEach crew _koruma3 + [_koruma3];
+{deleteVehicle _x} forEach crew _korumatimi;
+{deleteVehicle _x} forEach cargo _korumatimi + [_korumatimi];
 	
+
+/*
 	};
 	case ("kontema2"):
 	{
@@ -96,3 +109,4 @@ _trgkon = createTrigger ["EmptyDetector", getMarkerPos _markerCO];
 	};
 	
 	};
+*/
