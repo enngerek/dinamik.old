@@ -41,7 +41,11 @@ _koruma1=["mob_konbasla",resistance,"I_APC_Wheeled_03_cannon_F"] call ws_fnc_cre
 sleep 1;
 _koruma2=["mob_konbasla",resistance,"I_MRAP_03_F"] call ws_fnc_createVehicle;
 sleep 1;
+//_havadestek = createGroup resistance;
+sleep 1;
 _koruma3=["mob_konbasla",resistance,"I_APC_tracked_03_cannon_F"] call ws_fnc_createVehicle;
+sleep 1;
+
 sleep 1;
 _korumatimi=["mob_konbasla",resistance,"I_Truck_02_covered_F",[],[8,["I_Soldier_lite_F","I_soldier_F","I_Soldier_03_F","I_Soldier_02_F"],loaded]] call ws_fnc_createVehicle;
 sleep 1;
@@ -66,6 +70,7 @@ sleep 2;
 _korumatimi setVehicleVarName "konvoy_6"; 
 konvoy_6 = _korumatimi;
 sleep 2;
+
 
 _konvoyrota = [konvoy,"mob_konbit",30] spawn ws_fnc_taskConvoy;
 
