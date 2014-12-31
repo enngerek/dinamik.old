@@ -10,8 +10,9 @@ call compile preprocessfile "addactions.sqf";
 //nul = [] execVM "gorevler\mak.sqf";
 //nul = [] execVM "gorevler\kasaba4.sqf";
 //nul = [] execVM "gorevler\mayin.sqf";
-nul = [] execVM "gorevler\denizalti.sqf";
+//nul = [] execVM "gorevler\denizalti.sqf";
 //nul = [] execVM "gorevler\rehine.sqf";
+nul = [] execVM "gorevler\konvoy3.sqf";
 
 //testgithub;
 //test2;

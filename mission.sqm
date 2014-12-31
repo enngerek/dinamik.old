@@ -247,7 +247,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=57;
+		items=59;
 		class Item0
 		{
 			position[]={14181.271,19.444246,16291.023};
@@ -619,6 +619,19 @@ class Mission
 			name="rehin_10";
 			type="Empty";
 			colorName="ColorRed";
+		};
+		class Item57
+		{
+			position[]={25337.1,16.736368,21050.453};
+			name="konvoy1basla";
+			type="Empty";
+			angle=-119.65029;
+		};
+		class Item58
+		{
+			position[]={20977.137,40.583961,16985.475};
+			name="konvoy1bitis";
+			type="Empty";
 		};
 	};
 };
