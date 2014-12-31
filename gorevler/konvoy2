@@ -14,17 +14,17 @@ switch (_seckontema) do
 	sleep 1;
 	
 	_markerKO = createMarker ["mob_konbasla", _mrkSpawnkonbasla];
-	_markerKO setMarkerType "o_inf";
+	_markerKO setMarkerType "hd_start";
 	_markerKO setMarkerColor "ColorRed";
-	_markerKO setMarkerText " Konvoy Başlangıç Noktası";
-	_markerKO setMarkerSize [1,1];
+	_markerKO setMarkerText " Konvoy çıkış noktası";
+	_markerKO setMarkerSize [5,5];
 	sleep 2;
 	
 	_markerKO2 = createMarker ["mob_konbit", _mrkSpawnkonbitis];
-	_markerKO2 setMarkerType "o_inf";
+	_markerKO2 setMarkerType "hd_end";
 	_markerKO2 setMarkerColor "ColorRed";
-	_markerKO2 setMarkerText " Konvoy varış Noktası";
-	_markerKO2 setMarkerSize [1,1];
+	_markerKO2 setMarkerText " Konvoy varış noktası";
+	_markerKO2 setMarkerSize [5,5];
 	sleep 2;
 	_null = [player, "mob_konbasla", ["Silah ve muhimmat yüklü bir konvoyun yola çıktığına dair istihbarat alınmıştır.Konvoyu yolda yakalayarak Muhimmat Kamyonlarını imha edin.", "Konvoy baskını", "Konvoy baskını"], getMarkerPos "mob_konbasla", false] spawn BIS_fnc_taskCreate;
 sleep 1;
@@ -64,6 +64,15 @@ konvoy_5 = _koruma3;
 sleep 2;
 
 _konvoyrota = [konvoy,"mob_konbit",30] spawn ws_fnc_taskConvoy;
+
+_trgkon = createTrigger ["EmptyDetector", getMarkerPos _markerCO]; 
+	_trgkon setTriggerArea [350, 350, 0, false]; 
+	_trgkon setTriggerActivation ["resistance", "NOT PRESENT", false]; 
+	_trgkon setTriggerStatements ["not alive konvoy and not alive konvoy_1 and not alive konvoy_3", "", ""]; 
+
+	//enemyDead = false; 
+	waitUntil {triggerActivated _trgkon}; 
+
 	
 	};
 	case ("kontema2"):
