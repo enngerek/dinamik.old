@@ -32,10 +32,20 @@ _null = ["mob_konbasla", "CREATED"] spawn BIS_fnc_taskSetState;
 sleep 1;
 //_SideHQ = createCenter resistance;
 _grpkonvoy = createGroup resistance;
-["mob_konbasla",_grpkonvoy,"I_Truck_02_ammo_F"] call ws_fnc_createVehicle;	
+
+heli = "I_Truck_02_covered_F" createVehicle getMarkerPos "mob_konbasla";
+
+veh1=["mob_konbasla",_grpkonvoy,"I_Truck_02_ammo_F"] call ws_fnc_createVehicle;	
 sleep 1;
+_veh2=["mob_konbasla",_grpkonvoy,"I_Truck_02_covered_F"] call ws_fnc_createVehicle;
+sleep 1;
+_grptim1 = [getMarkerPos "mob_konbasla", independent, (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad")] call BIS_fnc_spawnGroup;
+sleep 2;
+//{_x moveInDriver _heli} forEach units _grptim1;
+{_x moveIndriver heli} forEach units _grptim1;
+{_x moveInCargo heli} forEach units _grptim1;
+//null=[getMarkerPos "mob_konbasla",independent,8,[["I_G_Soldier_F"],["I_G_Soldier_AR_F"]]] call ws_fnc_createGroup;
 /*
-_arac2=["mob_konbasla",resistance,"I_Truck_02_ammo_F"] call ws_fnc_createVehicle;	
 sleep 1;
 _arac3=["mob_konbasla",resistance,"I_Truck_02_ammo_F"] call ws_fnc_createVehicle;	
 sleep 1;
@@ -52,14 +62,14 @@ sleep 1;
 sleep 1;
 //["mob_konbasla",resistance,"I_Truck_02_covered_F",[],[8,["I_Soldier_lite_F","I_soldier_F","I_Soldier_03_F","I_Soldier_02_F"],true]] call ws_fnc_createVehicle;
 sleep 1;
-/*
-//_arac1 setVehicleVarName "konvoy"; 
-//konvoy = _arac1;
+
+//veh setVehicleVarName "konvoy"; 
+//konvoy = veh;
 sleep 1;
-//_arac2 setVehicleVarName "konvoy_1"; 
-//konvoy_1 = _arac2;
-sleep 1;
-//_arac3 setVehicleVarName "konvoy_2"; 
+//veh2 setVehicleVarName "konvoy_1"; 
+//konvoy_1 = veh2;
+/*sleep 1;
+//_arac3 setVehicleVarName "konvoy_1"; 
 //konvoy_2 = _arac3;
 sleep 1;
 _koruma1 setVehicleVarName "konvoy_3"; 
@@ -76,8 +86,8 @@ sleep 2;
 sleep 2;
 */
 
-//_konvoyrota = [konvoy,"konvoy1bitis",30] spawn ws_fnc_taskConvoy;
-_grpkonvoy move getmarkerpos "konvoy1bitis";
+//[heli,"konvoy1bitis",30] spawn ws_fnc_taskConvoy;
+_grptim1 move getmarkerpos "konvoy1bitis";
 //_wp =_grpkonvoy addWaypoint [getmarkerpos "konvoy1bitis", 0];
 //_wp setWaypointType "MOVE";
 //_grpkonvoy setCurrentWaypoint [_wp, 0];
@@ -89,6 +99,7 @@ _trgkon = createTrigger ["EmptyDetector", getMarkerPos _markerKO2];
 	
 	
 //******************({alive _x} count units _grpkonvoy == 0) AND ({alive _x} count units _grpkonvoy == 2);
+//******************{_x moveInCargo NAMEOFVEHICLE} forEach units group this
 	//enemyDead = false; 
 	waitUntil {triggerActivated _trgkon}; 
 	_null = ["mob_konbasla", "SUCCEEDED"] spawn BIS_fnc_taskSetState;
