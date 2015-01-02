@@ -45,7 +45,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			side="WEST";
@@ -204,10 +204,29 @@ class Mission
 				items=1;
 				class Item0
 				{
+					presence=0;
 					position[]={8442.915,108.3764,25112.877};
 					id=7;
 					side="GUER";
 					vehicle="I_soldier_F";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item7
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					presence=0;
+					position[]={8458.0088,105.53542,25115.559};
+					id=8;
+					side="EAST";
+					vehicle="O_officer_F";
 					leader=1;
 					skill=0.60000002;
 				};
@@ -220,7 +239,7 @@ class Mission
 		class Item0
 		{
 			position[]={25286.58,83.654442,21815.438};
-			id=8;
+			id=9;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";
 			skill=0.60000002;
@@ -229,7 +248,7 @@ class Mission
 		class Item1
 		{
 			position[]={20644.492,49.269146,20108.68};
-			id=9;
+			id=10;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";
 			skill=0.60000002;
@@ -238,7 +257,7 @@ class Mission
 		class Item2
 		{
 			position[]={20894.27,33.458294,19226.598};
-			id=10;
+			id=11;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";
 			skill=0.60000002;
@@ -622,10 +641,10 @@ class Mission
 		};
 		class Item57
 		{
-			position[]={25337.1,16.736368,21050.453};
+			position[]={25253.002,16.608238,20987.395};
 			name="konvoy1basla";
 			type="Empty";
-			angle=-119.65029;
+			angle=49.062328;
 		};
 		class Item58
 		{
