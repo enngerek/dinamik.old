@@ -537,27 +537,28 @@ class Mission
 		};
 		class Item42
 		{
-			position[]={16598.471,-0.069499567,12301.253};
+			position[]={16462.961,-0.17880937,12226.643};
 			name="da_2";
 			type="Empty";
+			angle=-11.915856;
 		};
 		class Item43
 		{
-			position[]={12858.939,0.063203871,14109.081};
+			position[]={12867.366,0.19447619,14098.471};
 			name="da_3";
 			type="Empty";
 			angle=-214.05981;
 		};
 		class Item44
 		{
-			position[]={27584.941,-0.0016309832,24417.955};
+			position[]={27578.279,-0.037182596,24374.342};
 			name="da_4";
 			type="Empty";
 			angle=-9.8669252;
 		};
 		class Item45
 		{
-			position[]={3245.3103,-0.061273251,12826.813};
+			position[]={3254.0684,0.049067013,12818.999};
 			name="da_5";
 			type="Empty";
 			angle=189.63657;
@@ -651,6 +652,38 @@ class Mission
 			position[]={20977.137,40.583961,16985.475};
 			name="konvoy1bitis";
 			type="Empty";
+		};
+	};
+	class Sensors
+	{
+		items=2;
+		class Item0
+		{
+			position[]={17415.541,42.57859,15528.541};
+			a=15000;
+			b=15000;
+			activationBy="GUER";
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="list_to_kill=thislist";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={23723.643,-143.50789,13565.424};
+			a=0;
+			b=0;
+			activationBy="ALPHA";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			text="öldür";
+			expActiv="{_x setdammage 1} foreach list_to_kill";
+			class Effects
+			{
+			};
 		};
 	};
 };

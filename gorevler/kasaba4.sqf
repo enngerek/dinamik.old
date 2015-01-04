@@ -53,18 +53,20 @@ switch (_sectema) do
 	
 	_newPos = [getmarkerpos _markerCO,[0,50],random 360,0,[1,250],"O_Truck_03_covered_F"] call SHK_pos;
 	
+	sleep 1;
+	
 	_mhq = createVehicle ["O_Truck_03_covered_F", _newPos,[], 0, "NONE"];
 	//_camonet = createVehicle ["CamoNet_OPFOR_big_F", getPos _mhq, [], 0, "CAN_COLLIDE"];
 	
 
-	_newPos2 = [getmarkerpos _markerCO,[101,301],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	_newPos2 = [getmarkerpos _markerCO,[0,30],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	sleep 2;
-	_newPos3 = [getmarkerpos _markerCO,[102,302],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	_newPos3 = [getmarkerpos _markerCO,[30,100],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	sleep 2;
-	_newPos4 = [getmarkerpos _markerCO,[103,303],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	_newPos4 = [getmarkerpos _markerCO,[100,150],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	sleep 2;
-	_newPos5 = [getmarkerpos _markerCO,[103,303],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
-	
+	_newPos5 = [getmarkerpos _markerCO,[150,200],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	sleep 2;
 	
 	//_aracarrayind=["I_G_Offroad_01_armed_F","I_MRAP_03_hmg_F","I_APC_tracked_03_cannon_F","I_Truck_02_box_F","I_Truck_02_transport_F"];
 	//_aracarrayeast=["O_APC_Tracked_02_cannon_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_G_Offroad_01_armed_F","O_Truck_02_covered_F","O_Truck_02_transport_F","O_Truck_03_transport_F"];
@@ -74,54 +76,51 @@ switch (_sectema) do
 	//_secilenaraceast2=_aracarrayeast call BIS_fnc_selectRandom;
 		
 	_ifv1 = createGroup resistance;
+	sleep 2;
 	[_newPos2, 10, "I_G_Offroad_01_armed_F", _ifv1] call BIS_fnc_spawnvehicle;
+	sleep 2;
 	nul = [_ifv1,getPos _mhq, 250] call BIS_fnc_taskPatrol;
-	sleep 10;
+	sleep 2;
 	[_newPos3, 10, "I_G_Offroad_01_armed_F", _ifv1] call BIS_fnc_spawnvehicle;
-	sleep 10;
+	sleep 2;
 	_ifv2 = createGroup EAST;
 	[_newPos4, 10, "O_G_Offroad_01_armed_F", _ifv2] call BIS_fnc_spawnvehicle;
-	sleep 10;
+	sleep 2;
 	[_newPos5, 10, "O_G_Offroad_01_armed_F", _ifv2] call BIS_fnc_spawnvehicle;
 	
 	_grp1C = [getMarkerPos _markerCO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 ] call BIS_fnc_spawnGroup;
-	nul = [_grp1C,getPos _mhq, 150] call BIS_fnc_taskPatrol;
+	sleep 2; = [_grp1C,getPos _mhq, 150] call BIS_fnc_taskPatrol;
 	
 	_grp2C = [getMarkerPos _markerCO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 
 ] call BIS_fnc_spawnGroup;
-	nul = [_grp2C,getPos _mhq, 200] call BIS_fnc_taskPatrol;
+	sleep 2; = [_grp2C,getPos _mhq, 200] call BIS_fnc_taskPatrol;
 	
 	_grp3C = [getMarkerPos _markerCO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 
 ] call BIS_fnc_spawnGroup;
-	nul = [_grp3C,getPos _mhq, 250] call BIS_fnc_taskPatrol;
+	sleep 2; = [_grp3C,getPos _mhq, 250] call BIS_fnc_taskPatrol;
+	
+waitUntil {{{alive _x && (_x distance _mhg < 700)}count units _x == 0}count [_grp1C,_grp2C,_grp3C,] == 3};
 
-	_trg = createTrigger ["EmptyDetector", getMarkerPos _markerCO]; 
-	_trg setTriggerArea [350, 350, 0, false]; 
-	_trg setTriggerActivation ["resistance", "NOT PRESENT", false]; 
-	_trg setTriggerStatements ["this", "", ""]; 
-
-	enemyDead = false; 
-	waitUntil {triggerActivated _trg}; 
 
 	_null = ["mob_clear", "SUCCEEDED"] spawn BIS_fnc_taskSetState;
 	
 	sleep 10;
 
 	deleteMarker _markerCO;
-//deleteMarker _TaskZone1;
+
 	deleteVehicle _mhq;
-	//deleteVehicle _camonet;
+
 	deleteVehicle _trg;
 
 	{deleteVehicle _x} forEach units _grp1C;
 	{deleteVehicle _x} forEach units _grp2C;
 	{deleteVehicle _x} forEach units _grp3C;
 	{deleteVehicle _x} forEach units _ifv1;
-	deleteGroup _ifv1;
 	{deleteVehicle _x} forEach units _ifv2;
+	deleteGroup _ifv1;
 	deleteGroup _ifv2;
 	deleteGroup _grp1C;
 	deleteGroup _grp2C;

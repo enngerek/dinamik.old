@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////
 // Function file for ArmA III
 // Created by: M4RT14L
 //////////////////////////////////////////////////////////////////
@@ -21,7 +21,7 @@ if (!isDedicated) then {
 
 if (!isDedicated) then {
     fnc_sabotageSSN = {
-        _this addAction ["<t color='#FF6600'>Place Magnet Mine</t>", "scripts\sabSSN.sqf", nil, 6, true, true, "", ""];
+        _this addAction ["<t color='#FF6600'>Mıknatıslı Mayını Yerleştir.</t>", "scripts\sabSSN.sqf", nil, 6, true, true, "", ""];
     };
     sabotageSSN = [];
     "sabotageSSN" addPublicVariableEventHandler {(_this select 1) call fnc_sabotageSSN};
@@ -33,4 +33,25 @@ if (!isDedicated) then {
     };
     uavdata = [];
     "uavdata" addPublicVariableEventHandler {(_this select 1) call fnc_uavdata};
+};
+
+fnc_rec_daimha = {
+	private ["_pow"];
+	_pow = _this select 0;
+	_pow addAction ["<t color='#FF6600'>Mıknatıslı Mayını Yerleştir</t>", "scripts\sabSSN.sqf", nil, 6, true, true, "", ""];
+};
+fnc_rec_rehkurtar = {
+	private ["_pow"];
+	_pow = _this select 0;
+	_pow addAction ["<t color='#FF6600'>Beni Takip Et</t>", "scripts\arrest.sqf", nil, 6, true, true, "", ""];
+};
+fnc_rec_uavdata = {
+	private ["_pow"];
+	_pow = _this select 0;
+	_pow addAction ["<t color='#FF6600'>HardDiski Al ve C4 Yerleştir</t>", "scripts\uavdata.sqf", nil, 6, true, true, "", ""];
+};
+fnc_rec_rehinekurtar = {
+	private ["_pow"];
+	_pow = _this select 0;
+	_pow addAction ["<t color='#FF6600'>Beni Takip Et</t>", "scripts\arrest.sqf", nil, 6, true, true, "", ""];
 };

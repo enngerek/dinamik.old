@@ -3,14 +3,7 @@
 //---By Valixx, Kylania & M4RT14L---//
 //---------------v1.8---------------//
 //////////////////////////////////////
-if (! isServer) exitWith {};
 
-_myHint ="Yeni Görev Emri Alınıyor";
-GlobalHint = _myHint;
-publicVariable "GlobalHint";
-hintsilent parseText _myHint;
-
-sleep 2;
 
 _rehmarkerarray = ["rehin_1","rehin_1","rehin_2","rehin_3","rehin_4","rehin_5","rehin_6","rehin_7","rehin_8","rehin_9","rehin_10"] ;
 _rehsecilenarray = _rehmarkerarray call BIS_fnc_selectRandom;
@@ -21,53 +14,57 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 	//creating the marker 
 	sleep 2;
 
-	_markerREH = createMarker ["mob_rehine", _rehmrkSpawnPos];
-	_markerREH setMarkerShape "ellipse";
-	_markerREH setMarkerColor "ColorYellow";
-	_markerREH setMarkerText " Rehine Durumu";
-	_markerREH setMarkerSize [300,300];
+	/*_markerGO = createMarker ["mob_rehine", _rehmrkSpawnPos];
+	_markerGO setMarkerShape "ellipse";
+	_markerGO setMarkerColor "ColorYellow";
+	//_markerGO setMarkerBrush "BORDER";
+	_markerGO setMarkerText " Rehine Durumu";
+	_markerGO setMarkerSize [300,300];
+	*/
+	
+	_markerGO = createMarker ["mob_rehine", _rehmrkSpawnPos];
+	_markerGO setMarkerType "hg_waqrning";
+	_markerGO setMarkerColor "ColorRed";
+	_markerGO setMarkerText " Rehine Durumu";
+	_markerGO setMarkerSize [0.7,0.7];
 	
 	sleep 2;
 	
-	_null = [player, "mob_rehine", ["Rehin Alınan gazeteciyi kurtarın", "Rehineyi kurtar", "Rehineyi kurtar"], getMarkerPos "mob_rehine", false] spawn BIS_fnc_taskCreate;
+	_null = [player, "mob_rehine", ["Rehin alınan gazeteciyi kurtarın", "Rehineyi Kurtar", "Rehineyi Kurtar"], getMarkerPos "mob_rehine", false] spawn BIS_fnc_taskCreate;
 	_null = ["mob_rehine", "CREATED"] spawn BIS_fnc_taskSetState;
 	
-	sleep 5;
-
-	//creating the vehicle
-	
-	//_newPos = [getmarkerpos _markerREH,[0,400],random 360,0] call SHK_pos;
-	_newPos = getmarkerpos "mob_rehine";
- 	//_wreck = createVehicle ["B_Plane_CAS_01_F", _newPos, [], 0, "CAN_COLLIDE"];
-	//_wreck setDammage 1;
-	
+	sleep 2;
+	_newPos = [getmarkerpos _markerGO,[0,200],random 360,0,[0,200],"C_journalist_F"] call SHK_pos;
 		
 	sleep 2;
 	
-	//_newPos2 = [_wreck,[200,300],random 360,0,[0,250],"B_Pilot_F"] call SHK_pos;
 	
-	_pilotgrp = createGroup civilian;
-	_rehine1 = _pilotgrp createUnit ["C_journalist_F", _newPos, [], 0, "NONE"];
+	_grprehine = createGroup civilian;
+	_rehine1 = _grprehine createUnit ["C_journalist_F", _newPos, [], 0, "NONE"];
+	sleep 3;
 	_rehine1 allowDamage false;
-	sleep 3;
-	//nul = [getMarkerPos "mob_rehine",_rehine1,400,0] execVM "shk_buildingpos.sqf";
-	nul = [getpos _rehine1,[_rehine1],300,0,[],false,false] execVM "shk_buildingpos.sqf";
-	sleep 3;
 	_rehine1 setunitpos "middle";
 	_rehine1 disableAI "MOVE";
 	_rehine1 disableAI "ANIM";
+	nul = [getpos _rehine1,[_rehine1],250,0,[],false,false] execVM "shk_buildingpos.sqf";
+	sleep 3;
 	
-	//_rehine1 setcaptive true;
-	//removeAllWeapons _rehine1;
-	//removeHeadgear _rehine1;
-	//removeBackpack _rehine1;
-	//removeGoggles _rehine1;
+	_markerGO2 = createMarker ["mob_rehine", _newpos];
+	_markerGO2 setMarkerShape "ellipse";
+	_markerGO2 setMarkerColor "ColorYellow";
+	_markerGO2 setMarkerBrush "BORDER";
+	_markerGO2 setMarkerText " İstihbarata göre rehine buralarda bir yerde";
+	_markerGO2 setMarkerSize [300,300];
 	
-	sleep 2;
-	eskortet = _rehine1;
-	publicVariable "eskortet";
+	_markerGO3 = createMarker ["mob_rehine", getpos _rehine1];
+	_markerGO3 setMarkerType "hg_waqrning";
+	_markerGO3 setMarkerColor "ColorRed";
+	_markerGO3 setMarkerText " Rehine Durumu";
+	_markerGO3 setMarkerSize [0.7,0.7];
 	
-	_markerrehine = createMarker ["rehinemarkerr", getPos _rehine1];
+	[[_rehine1],"fnc_rec_rehinekurtar",true,true] spawn BIS_fnc_MP;
+	
+	_markerrehine = createMarker ["rehinemarker", getPos _rehine1];
 	_markerrehine setMarkerType "hd_dot";
 	_markerrehine setMarkerColor "ColorBlue";
 	_markerrehine setMarkerSize [0.7,0.7];
@@ -84,63 +81,68 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 	sleep 5;
 	
 	
-_grpr1 = [_korumapos, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]] call BIS_fnc_spawnGroup;
-sleep 2;
-//nul = [_grpr1,getPos _rehine1, 20] call BIS_fnc_taskPatrol;
-nul=[_grpr1, getPos _rehine1] call BIS_fnc_taskDefend;
+_grptim1 = [_korumapos, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]] call BIS_fnc_spawnGroup;
 sleep 1;
-_grpr2 = [_korumapos1, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]] call BIS_fnc_spawnGroup;
+nul=[_grptim1, getPos _rehine1] call BIS_fnc_taskDefend;
+sleep 1;
+_grptim2= [_korumapos1, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]] call BIS_fnc_spawnGroup;
 sleep 2;
-nul = [_grpr2,getPos _rehine1, 30] call BIS_fnc_taskPatrol;
+nul = [_grptim2,getPos _rehine1, 50] call BIS_fnc_taskPatrol;
 sleep 2;
-_grpr3 = [_korumapos2, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]] call BIS_fnc_spawnGroup;
+_grptim3 = [_korumapos2, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]] call BIS_fnc_spawnGroup;
 sleep 2;
-nul = [_grpr3,getPos _rehine1, 50] call BIS_fnc_taskPatrol;
+nul = [_grptim3,getPos _rehine1, 100] call BIS_fnc_taskPatrol;
 sleep 1;
 
-_aracpos1 = [getmarkerpos "mob_rehine",[0,300],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+_aracpos1 = [getpos _rehine1,[0,200],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 sleep 2;
-_aracpos2 = [getmarkerpos "mob_rehine",[0,300],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+_aracpos2 = [getpos _rehine1,[0,200],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 sleep 2;
 
+
+_arac3=["I_G_Offroad_01_armed_F","I_G_Offroad_01_F"] call BIS_fnc_selectRandom;
+_arac4=["I_G_Offroad_01_armed_F","I_G_Offroad_01_F"] call BIS_fnc_selectRandom;
 	
-	_arac1 = createGroup resistance;
+	_grptim4 = createGroup resistance;
 	sleep 1;
-	[_aracpos1, 10, "I_G_Offroad_01_armed_F", _arac1] call BIS_fnc_spawnvehicle;
+	[_aracpos1, 10, "I_G_Offroad_01_armed_F", _grptim1] call BIS_fnc_spawnvehicle;
 	sleep 2;
-	nul = [_arac1,getPos _rehine1, 300] call BIS_fnc_taskPatrol;
-	
-	_arac2 = createGroup resistance;
+		
 	sleep 2;
-	[_aracpos2, 10, "I_G_Offroad_01_armed_F", _arac2] call BIS_fnc_spawnvehicle;
-	sleep 2;
-	nul = [_arac2,getPos _rehine1, 300] call BIS_fnc_taskPatrol;
-	
+	[_aracpos2, 10, "I_G_Offroad_01_armed_F", _grptim2] call BIS_fnc_spawnvehicle;
 	sleep 2;
 	
-	waitUntil { _rehine1 distance getMarkerPos "tabus" < 100 };
+	[_korumapos1, 10, _arac3, _grptim3] call BIS_fnc_spawnvehicle;
+	sleep 2;
+	[_korumapos2, 10, _arac3, _grptim4] call BIS_fnc_spawnvehicle;
+	sleep 2;
+	nul = [_grptim4,getPos _rehine1, 100] call BIS_fnc_taskPatrol;
+	sleep 2;
+	
+	waitUntil { _rehine1 distance getMarkerPos "tabus" < 100 and {{alive _x && (_x distance _uav < 700)}count units _x == 0}count [_grptim1,_grptim2,_grptim3,_grptim4] == 4};
 	
 	[_rehine1] join grpNull;
 	
 	null = ["mob_rehine", "SUCCEEDED"] spawn BIS_fnc_taskSetState;
 	
-	sleep 10;
+	sleep random 10;
 	
-	deleteMarker _markerREH;
-	deleteMarker _markerrehine;
-	{deleteVehicle _x} forEach units _grpr1;
-	{deleteVehicle _x} forEach units _grpr2;
-	{deleteVehicle _x} forEach units _grpr3;
-	{deleteVehicle _x} forEach units _arac1;
-	{deleteVehicle _x} forEach units _arac2;
-	deleteGroup _grpr1;
-	deleteGroup _grpr2;
-	deleteGroup _grpr3;
-	deleteGroup _arac1;
-	deleteGroup _arac2;
+	deleteMarker _markerGO1;
+		deleteMarker _markerGO2;
+			deleteMarker _markerGO3;
+	
 	deleteVehicle _rehine1;
-	deleteGroup _pilotgrp;
 	
+	{deleteVehicle _x} forEach units _grptim1;
+	deleteGroup _grptim1;
+	{deleteVehicle _x} forEach units _grptim2;
+	deleteGroup _grptim2;
+	{deleteVehicle _x} forEach units _grptim3;
+	deleteGroup _grptim3;
+	{deleteVehicle _x} forEach units _grptim4;
+	deleteGroup _grptim4;
+	
+		
 	_myHint ="Tebrikler Rehine Güven İçinde Karargaha Ulaştı!";
 	GlobalHint = _myHint;
 	publicVariable "GlobalHint";
@@ -151,6 +153,6 @@ sleep 2;
 	publicVariable "GlobalSCHat";
 	player sideChat _mySChat;
 	nul = [] execVM "gorev.sqf";
+	sleep 5;
 	[west, "mob_rehine"] call LARs_fnc_removeTask;
-	sleep 10;
-nul = [] execVM "gorev.sqf";
+

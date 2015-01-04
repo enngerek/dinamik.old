@@ -217,11 +217,11 @@ _wp setWaypointBehaviour "CARELESS";
 _grpkonvoy setCurrentWaypoint [_wp, 0];
 
 
-//_trgkon = createTrigger ["EmptyDetector", getMarkerPos _markerKO2]; 
+_trgkon = createTrigger ["EmptyDetector", getMarkerPos _markerKO2]; 
 	//_trgkon setTriggerArea [350, 350, 0, false]; 
 	//_trgkon setTriggerActivation ["resistance", "PRESENT", false]; 
-	//_trgkon setTriggerStatements ["!alive _hedefarac1 and !alive _hedefarac2 ","hint 'trig ok'", ""]; 
-	waitUntil !alive _hedefarac1 and !alive _hedefarac2;
+_trgkon setTriggerStatements ["(!alive _hedefarac1) and (!alive _hedefarac2) ","hint 'trig ok'", ""]; 
+	//waitUntil !alive _hedefarac1 and !alive _hedefarac2;
 /*if (triggeractivated _trgkon) then {
 _null = ["mob_konbasla", "SUCCEEDED"] spawn BIS_fnc_taskSetState;
 [player, "mob_konbasla"] call LARs_fnc_removeTask;

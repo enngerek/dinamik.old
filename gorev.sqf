@@ -1,4 +1,6 @@
-_gorevarray = ["MAK","UAV","kasaba"] ;
+if (! isServer) exitWith {};
+
+/*_gorevarray = ["MAK","UAV","kasaba"] ;
 _secilenarray = _gorevarray call BIS_fnc_selectRandom;
 switch (_secilenarray) do
 {
@@ -18,3 +20,7 @@ switch (_secilenarray) do
 	
 	};
 };
+*/
+//nul = [] execVM "gorevler\denizalti2.sqf";
+//nul = [] execVM "gorevler\mak.sqf";
+nul = [] execVM "gorevler\uav2.sqf";

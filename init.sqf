@@ -2,18 +2,9 @@
 call compile preprocessFileLineNumbers "removeTasks.sqf";
 call compile preprocessfile "globaltools.sqf";
 call compile preprocessfile "addactions.sqf";
+//call compile preprocessfile "eskiyisil.sqf";
 //call compile preprocessFileLineNumbers "fhqtt2.sqf"; 
 
 
 
-//nul = [] execVM "gorevler\uav2.sqf";
-//nul = [] execVM "gorevler\mak.sqf";
-//nul = [] execVM "gorevler\kasaba4.sqf";
-//nul = [] execVM "gorevler\mayin.sqf";
-//nul = [] execVM "gorevler\denizalti.sqf";
-//nul = [] execVM "gorevler\rehine.sqf";
-nul = [] execVM "gorevler\konvoy4.sqf";
-
-//testgithub;
-//test2;
-
+nul = [] execVM "gorevsec.sqf"; 

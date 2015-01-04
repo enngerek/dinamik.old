@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////
 // Function file for Armed Assault
 // Created by: M4RT14L
 //////////////////////////////////////////////////////////////////
@@ -7,10 +7,10 @@ _ssn = _this select 0;
 _ingeniero = _this select 1;
 _callid = _this select 2;
 
-hint "ARMING DEMO CHARGE";
+hint "PATLAYICI YERLEŞTİRİLDİ";
 _ssn removeAction _callid;
 sleep 10;
-hint "EXPLOSIVES ARMED BLOW IN 60 SECONDS";
+hint "ZAMANLAYICI KURULDU : 60 sn ";
 sleep 60;
 bomb1 = "M_Mo_82mm_AT_LG" createVehicle (getPos _ssn);
 sleep 3;
