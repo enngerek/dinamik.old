@@ -82,8 +82,40 @@ sleep 1;
 [_grptim2] joinSilent _grpkonvoy;
 [_grptim3] joinSilent _grpkonvoy;
 //////////////////////////////////////////////////////////////
+sleep 15;
+_wp =_grpkonvoy addWaypoint [getmarkerpos _markerKO2, 0];
+_wp setWaypointType "MOVE";
+_wp setWaypointSpeed "LIMITED";
+_wp setWaypointBehaviour "CARELESS";
+_grpkonvoy setCurrentWaypoint [_wp, 0];
+/////////////////////////////////////////////////////////////
+sleep 5;
+waitUntil {{alive _x} count units _grpkonvoy < 3};
+////////////////////////////////////////////////////////////
+deleteMarker _markerKO;
+deleteMarker _markerKO2;
 
+	{deleteVehicle _x} forEach units _grptim1;
+	deleteGroup _grptim1;
+	{deleteVehicle _x} forEach units _grptim2;
+	deleteGroup _grptim2;
+	{deleteVehicle _x} forEach units _grptim3;
+	deleteGroup _grptim3;
+	{deleteVehicle _x} forEach units _grpkonvoy;
+	deleteGroup _grpkonvoy;
 
+/////////////////////////////////////////////////////////////
+[west, "mob_konbasla"] call LARs_fnc_removeTask;sleep 5;
+////////////////////////////////////////////////////////////
+_myHint ="Tebrikler! GÖREV TAMAMLANDI";
+	GlobalHint = _myHint;
+	publicVariable "GlobalHint";
+	hintsilent parseText _myHint;
+
+	_mySChat ="Tebrikler!";
+	GlobalSCHat = _mySChat;
+	publicVariable "GlobalSCHat";
+	player sideChat _mySChat;
 
 
 
