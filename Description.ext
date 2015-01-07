@@ -49,10 +49,10 @@ class CfgDebriefing
 }; 
 
 */
-#include "VAS\menu.hpp"
+//#include "VAS\menu.hpp"
 
 class CfgFunctions
 {
-	#include "VAS\cfgfunctions.hpp"
+	//#include "VAS\cfgfunctions.hpp"
         #include "ws_fnc\config.hpp"
 };

@@ -1,5 +1,5 @@
-﻿_mrkSpawnkonbasla = getMarkerPos "konvoybasla_6";
-_mrkSpawnkonbitis = getMarkerPos "konvoybitis_6";
+_mrkSpawnkonbasla = getMarkerPos "konvoybasla_2";
+_mrkSpawnkonbitis = getMarkerPos "konvoybitis_2";
 	sleep 1;
 	
 	_markerKO = createMarker ["mob_konbasla", _mrkSpawnkonbasla];
@@ -61,10 +61,10 @@ sleep 2;
 {_x moveInCargo _timaraci2} forEach units _grptim2;
 sleep 1;
 /////////////////////////////////////////////////////////
-_arac1=["I_APC_tracked_03_cannon_F","I_APC_Wheeled_03_cannon_F","I_MRAP_03_hmg_F","I_MRAP_03_gmg_F"] call BIS_fnc_selectRandom;
-[_pos5, 180, _arac1, _grpkonvoy] call bis_fnc_spawnvehicle;
+_arac1=["I_APC_tracked_03_cannon_F","I_APC_Wheeled_03_cannon_F","I_MRAP_03_hmg_F","I_MRAP_03_gmg_F","I_Heli_Transport_02_F"] call BIS_fnc_selectRandom;
+nul=[_pos5, 180, _arac1, _grpkonvoy] call bis_fnc_spawnvehicle;
 _arac2=["I_APC_tracked_03_cannon_F","I_APC_Wheeled_03_cannon_F","I_MRAP_03_hmg_F","I_MRAP_03_gmg_F"] call BIS_fnc_selectRandom;
-[_pos6, 180, _arac2, _grpkonvoy] call bis_fnc_spawnvehicle;
+nul=[_pos6, 180, _arac2, _grpkonvoy] call bis_fnc_spawnvehicle;
 /////////////////////////////////////////////////////////
 _timaraci3 = "I_Truck_02_covered_F" createVehicle _pos7;
 sleep 1;
@@ -74,26 +74,32 @@ sleep 2;
 {_x moveInCargo _timaraci3} forEach units _grptim3;
 sleep 5;
 //////////////////////////////////////////////////////////
+sleep 30;
+//_grpkonvoy move _mrkSpawnkonbitis;
+
+_wp =_grpkonvoy addWaypoint [getmarkerpos _markerKO2, 0];
+sleep 2;
+_wp setWaypointType "MOVE";
+_wp setWaypointSpeed "LIMITED";
+_wp setWaypointBehaviour "CARELESS";
+sleep 2;
+_grpkonvoy setCurrentWaypoint [_grpkonvoy, 0];
+/////////////////////////////////////////////////////////
 [_grpsf1] joinSilent _grpkonvoy;
-sleep 1;
+sleep 2;
 [_grpsf2] joinSilent _grpkonvoy;
-sleep 1;
+sleep 2;
 [_grptim1] joinSilent _grpkonvoy;
-sleep 1;
+sleep 2;
 [_grptim2] joinSilent _grpkonvoy;
-sleep 1;
+sleep 2;
 [_grptim3] joinSilent _grpkonvoy;
 
 //////////////////////////////////////////////////////////////
 
-sleep 2;
-_wp =_grpkonvoy addWaypoint [getmarkerpos _markerKO2, 0];
+
 sleep 5;
-_wp setWaypointType "MOVE";
-_wp setWaypointSpeed "LIMITED";
-_wp setWaypointBehaviour "CARELESS";
-sleep 5;
-//_grpkonvoy setCurrentWaypoint [_grpkonvoy, 0];
+
 
 //_grpkonvoy allowFleeing 0;
 /////////////////////////////////////////////////////////////

@@ -10,7 +10,8 @@ class Mission
 		"A3_Modules_F_Curator_Curator",
 		"A3_Modules_F",
 		"A3_Characters_F_OPFOR",
-		"A3_Characters_F_INDEP"
+		"A3_Characters_F_INDEP",
+		"A3_Weapons_F_Ammoboxes"
 	};
 	addOnsAuto[]=
 	{
@@ -21,6 +22,7 @@ class Mission
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_INDEP",
 		"A3_Structures_F_Mil_Helipads",
+		"A3_Weapons_F_Ammoboxes",
 		"a3_map_altis"
 	};
 	randomSeed=4785077;
@@ -235,7 +237,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			position[]={25286.58,83.654442,21815.438};
@@ -263,10 +265,19 @@ class Mission
 			skill=0.60000002;
 			text="radar3yer";
 		};
+		class Item3
+		{
+			position[]={14208.073,19.376934,16294.224};
+			id=12;
+			side="EMPTY";
+			vehicle="Box_NATO_AmmoVeh_F";
+			skill=0.60000002;
+			init="0=[""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal;this allowdammage false;";
+		};
 	};
 	class Markers
 	{
-		items=59;
+		items=78;
 		class Item0
 		{
 			position[]={14181.271,19.444246,16291.023};
@@ -347,7 +358,7 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={9294.3789,14.771367,12050.528};
+			position[]={9007.0234,30.684677,12103.284};
 			name="town_12";
 			type="Empty";
 		};
@@ -359,7 +370,7 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={26981.045,18.912916,23054.715};
+			position[]={27005.572,20.361843,23160.539};
 			name="town_14";
 			type="Empty";
 		};
@@ -642,15 +653,131 @@ class Mission
 		};
 		class Item57
 		{
-			position[]={25253.002,16.608238,20987.395};
-			name="konvoy1basla";
-			type="Empty";
-			angle=49.062328;
+			position[]={14209.309,19.375658,16295.938};
+			name="arsenal";
+			text="Cephanelik";
+			type="o_support";
+			colorName="ColorBlue";
 		};
 		class Item58
 		{
-			position[]={20977.137,40.583961,16985.475};
-			name="konvoy1bitis";
+			position[]={25708.781,12.803997,20792.264};
+			name="konvoybasla";
+			type="Empty";
+		};
+		class Item59
+		{
+			position[]={25603.531,12.766394,20776.695};
+			name="konvoybitis";
+			type="Empty";
+		};
+		class Item60
+		{
+			position[]={25269.738,16.677015,21002.25};
+			name="konvoybasla_1";
+			type="Empty";
+		};
+		class Item61
+		{
+			position[]={18261.195,47.123127,15533.656};
+			name="konvoybitis_1";
+			type="Empty";
+		};
+		class Item62
+		{
+			position[]={21546.842,14.5039,7929.9478};
+			name="konvoybasla_2";
+			type="Empty";
+		};
+		class Item63
+		{
+			position[]={17760.27,4.1206665,18073.041};
+			name="konvoybitis_2";
+			type="Empty";
+		};
+		class Item64
+		{
+			position[]={4437.417,271.07141,20822.869};
+			name="konvoybasla_3";
+			type="Empty";
+		};
+		class Item65
+		{
+			position[]={6178.2451,43,16225.484};
+			name="konvoybitis_3";
+			type="Empty";
+		};
+		class Item66
+		{
+			position[]={8791.8701,176.18831,19771.813};
+			name="konvoybasla_4";
+			type="Empty";
+			angle=218.59277;
+		};
+		class Item67
+		{
+			position[]={6176.1514,43,16228.521};
+			name="konvoybitis_4";
+			type="Empty";
+		};
+		class Item68
+		{
+			position[]={6767.103,72.362228,16174.317};
+			name="konvoybasla_5";
+			type="Empty";
+		};
+		class Item69
+		{
+			position[]={14248.983,36.531898,18914.104};
+			name="konvoybitis_5";
+			type="Empty";
+		};
+		class Item70
+		{
+			position[]={3928.4258,47.257446,12152.684};
+			name="konvoybasla_6";
+			type="Empty";
+		};
+		class Item71
+		{
+			position[]={9244.6436,16.93652,21559.166};
+			name="konvoybitis_6";
+			type="Empty";
+		};
+		class Item72
+		{
+			position[]={9154.8721,16.727047,21491.621};
+			name="konvoybasla_7";
+			type="Empty";
+		};
+		class Item73
+		{
+			position[]={6178.6831,43,16215.194};
+			name="konvoybitis_7";
+			type="Empty";
+		};
+		class Item74
+		{
+			position[]={16833.654,11.130938,21848.473};
+			name="konvoybasla_8";
+			type="Empty";
+		};
+		class Item75
+		{
+			position[]={3227.6165,3.3992882,12499.898};
+			name="konvoybitis_8";
+			type="Empty";
+		};
+		class Item76
+		{
+			position[]={18516.191,54.462578,15597.006};
+			name="konvoybasla_9";
+			type="Empty";
+		};
+		class Item77
+		{
+			position[]={21076.25,26.465759,7088.2378};
+			name="konvoybitis_9";
 			type="Empty";
 		};
 	};

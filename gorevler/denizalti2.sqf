@@ -4,7 +4,7 @@ _myHint ="Yeni Görev Emri Alınıyor";
 GlobalHint = _myHint;
 publicVariable "GlobalHint";
 hintsilent parseText _myHint;
-//private["_markerDA","_hedef1","_possu","_possu2","_newPos1","_newPos2","_devnok"];
+//private["_markerGO","_hedef1","_possu","_possu2","_newPos1","_newPos2","_devnok"];
 sleep 1;
 //_rnd = floor (random (count(_damarkerarray)));
 //_dasecilenarray=_damarkerarray select _rnd;
@@ -20,11 +20,11 @@ _damarkerarray=_damarkerarray - [_dasecilenarray];
 _damrkSpawnTown = getMarkerPos _dasecilenarray;
 sleep 1;
 
-_markerDA = createMarker ["mob_da", _damrkSpawnTown];
-	_markerDA setMarkerType "o_naval";
-	_markerDA setMarkerColor "ColorRed";
-	_markerDA setMarkerText " Denizaltı sabotaj";
-	_markerDA setMarkerSize [1,1];
+    _markerGO = createMarker ["mob_da", _damrkSpawnTown];
+	_markerGO setMarkerType "o_naval";
+	_markerGO setMarkerColor "ColorRed";
+	_markerGO setMarkerText " Denizaltı sabotaj";
+	_markerGO setMarkerSize [1,1];
 	
 	sleep 2;
 	
@@ -36,26 +36,23 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 
 	//creating the vehicle
 	
-	_hedef1 = createVehicle ["Submarine_01_F", getmarkerpos _markerDA,[], 0, "NONE"];
+	_hedef1 = createVehicle ["Submarine_01_F", getmarkerpos _markerGO,[], 0, "NONE"];
 	sleep 2;
 	
-	
-	
-	
-	_possu = [getmarkerpos _markerDA,[10,50],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
+	_possu = [getmarkerpos _markerGO,[10,50],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
 	sleep 5;
-	_possu2 = [getmarkerpos _markerDA,[50,100],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
+	_possu2 = [getmarkerpos _markerGO,[50,100],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
 	sleep 5;
-	_possu3 = [getmarkerpos _markerDA,[100,150],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
+	_possu3 = [getmarkerpos _markerGO,[100,150],random 360,2,[],"I_Boat_Armed_01_minigun_F"] call SHK_pos;
 	sleep 5;
-	_newPos1 = [getmarkerpos _markerDA,[150,350],random 360,0,[1,200],"O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	_newPos1 = [getmarkerpos _markerGO,[150,350],random 360,0,[1,200],"O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	sleep 5;
-	_newPos2 = [getmarkerpos _markerDA,[150,350],random 360,0,[1,200],"O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	_newPos2 = [getmarkerpos _markerGO,[150,350],random 360,0,[1,200],"O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	sleep 5;
-	_devnok = [getmarkerpos _markerDA,[100,300],random 360,0,[1,200],"O_APC_Wheeled_02_rcws_F"] call SHK_pos;
+	_devnok = [getmarkerpos _markerGO,[100,300],random 360,0,[1,200],"O_APC_Wheeled_02_rcws_F"] call SHK_pos;
 	sleep 5;
 	
-	_devboat1 = createGroup resistance;
+	
 	_devboat2 = createGroup resistance;
 	_devboat3 = createGroup resistance;
 	sleep 1;
@@ -108,7 +105,7 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	_grpdalg = [getpos _hedef1, independent, (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "SpecOps" >> "HAF_DiverTeam")] call BIS_fnc_spawnGroup;
 	//nul = [_grpdalg,getpos _hedef1, 30] call BIS_fnc_taskPatrol;
 	
-	[[_hedef1],"fnc_rec_daimha",true,true] spawn BIS_fnc_MP;
+	[[_denizalti],"fnc_rec_daimha",true,true] spawn BIS_fnc_MP;
 	sleep 10;
 	
 	waitUntil {!alive _hedef1};
@@ -117,7 +114,7 @@ _markerDA = createMarker ["mob_da", _damrkSpawnTown];
 	
 	sleep 10;
 	
-	deleteMarker _markerDA;
+	deleteMarker _markerGO;
 	//deleteVehicle _trgDA;
 	deleteVehicle _hedef1;
 	
