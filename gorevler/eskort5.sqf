@@ -1,5 +1,5 @@
-﻿_mrkSpawnkonbasla = getMarkerPos "konvoybasla_6";
-_mrkSpawnkonbitis = getMarkerPos "konvoybitis_6";
+﻿_mrkSpawnkonbasla = getMarkerPos "konvoybasla_8";
+_mrkSpawnkonbitis = getMarkerPos "konvoybitis_8";
 	sleep 1;
 	
 	_markerKO = createMarker ["mob_konbasla", _mrkSpawnkonbasla];
@@ -102,6 +102,12 @@ waitUntil {{alive _x} count units _grpkonvoy < 3};
 ////////////////////////////////////////////////////////////
 deleteMarker _markerKO;
 deleteMarker _markerKO2;
+
+{deleteVehicle _x} forEach units _grpsf1;
+	deleteGroup _grpsf1;
+	
+	{deleteVehicle _x} forEach units _grpsf2;
+	deleteGroup _grpsf2;
 
 	{deleteVehicle _x} forEach units _grptim1;
 	deleteGroup _grptim1;

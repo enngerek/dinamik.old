@@ -746,7 +746,7 @@ class Mission
 		};
 		class Item72
 		{
-			position[]={9154.8721,16.727047,21491.621};
+			position[]={9335.1348,16.689774,21562.734};
 			name="konvoybasla_7";
 			type="Empty";
 		};
@@ -758,9 +758,10 @@ class Mission
 		};
 		class Item74
 		{
-			position[]={16833.654,11.130938,21848.473};
+			position[]={16791.672,14.130932,21727.01};
 			name="konvoybasla_8";
 			type="Empty";
+			angle=-158.92085;
 		};
 		class Item75
 		{
