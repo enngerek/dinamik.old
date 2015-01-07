@@ -1,7 +1,7 @@
 //Mission Select
 if(!isServer) exitWith {};
 
-_gorevturleri = ["uavbul","mak","denizalti","rehine","kasaba"]; //mission array
+_gorevturleri = ["uavbul","mak","denizalti","rehine","kasaba","konvoy"]; //mission array
 
 //_secilengorev = _gorevturleri call BIS_fnc_selectRandom; // random mission 
 _secilengorev = "kasaba";
