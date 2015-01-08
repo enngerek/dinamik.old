@@ -4,7 +4,7 @@ _secilenarray = _markerarray call BIS_fnc_selectRandom;
 _markerArray=_markerArray - [_secilenarray];
 _mrkSpawnTown = getMarkerPos _secilenarray;
 */
-_mrkSpawnTown = getMarkerPos "tıbbitah_1";
+_mrkSpawnPos = getMarkerPos "tıbbitah_1";
 
 _markerSO = createMarker ["mob_rescue", _mrkSpawnPos];
 	_markerSO setMarkerType "mil_objective";
