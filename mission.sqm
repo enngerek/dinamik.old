@@ -277,7 +277,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=78;
+		items=89;
 		class Item0
 		{
 			position[]={14181.271,19.444246,16291.023};
@@ -286,7 +286,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={11131.958,41.468204,14565.758};
+			position[]={11132.437,41.276569,14561.771};
 			name="town";
 			type="Empty";
 		};
@@ -779,6 +779,72 @@ class Mission
 		{
 			position[]={21076.25,26.465759,7088.2378};
 			name="konvoybitis_9";
+			type="Empty";
+		};
+		class Item78
+		{
+			position[]={19811.275,62.994484,17819.486};
+			name="tıbbitah";
+			type="Empty";
+		};
+		class Item79
+		{
+			position[]={19283.693,35.498173,17620.943};
+			name="tıbbitah_1";
+			type="Empty";
+		};
+		class Item80
+		{
+			position[]={3779.0793,14.462847,11650.277};
+			name="tıbbitah_2";
+			type="Empty";
+		};
+		class Item81
+		{
+			position[]={4225.4614,73.450607,15773.569};
+			name="tıbbitah_3";
+			type="Empty";
+		};
+		class Item82
+		{
+			position[]={10434.465,83.516022,17234.438};
+			name="tıbbitah_4";
+			type="Empty";
+		};
+		class Item83
+		{
+			position[]={10330.375,126.63782,19061.672};
+			name="tıbbitah_5";
+			type="Empty";
+		};
+		class Item84
+		{
+			position[]={13935.32,23.299683,18720.807};
+			name="tıbbitah_6";
+			type="Empty";
+		};
+		class Item85
+		{
+			position[]={24143.346,36.805984,23277.936};
+			name="tıbbitah_7";
+			type="Empty";
+		};
+		class Item86
+		{
+			position[]={22454.834,18.070353,20007.385};
+			name="tıbbitah_8";
+			type="Empty";
+		};
+		class Item87
+		{
+			position[]={3378.8621,26.826426,14343.438};
+			name="tıbbitah_9";
+			type="Empty";
+		};
+		class Item88
+		{
+			position[]={12734.875,45.919529,19705.557};
+			name="tıbbitah_10";
 			type="Empty";
 		};
 	};

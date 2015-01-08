@@ -8,4 +8,4 @@ call compile preprocessfile "addactions.sqf";
 
 
 //nul = [] execVM "gorevsec.sqf"; 
-nul = [] execVM "gorevler\eskort5.sqf"; 
+//nul = [] execVM "gorevler\tibbitahliye.sqf"; 

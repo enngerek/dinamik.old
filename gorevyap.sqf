@@ -1217,6 +1217,12 @@ _myHint ="Tebrikler! GÖREV TAMAMLANDI";
 
 
 fn_engerek_kasabagoreviyap={
+
+_markerarray = ["town","town_1","town_2","town_3","town_4","town_5","town_6","town_7","town_8","town_9","town_10","town_11","town_12","town_13","town_14"] ;
+_secilenarray = _markerarray call BIS_fnc_selectRandom;
+_markerArray=_markerArray - [_secilenarray];
+_mrkSpawnTown = getMarkerPos _secilenarray;
+
 _markerCO = createMarker ["mob_clear", _mrkSpawnTown];
 	_markerCO setMarkerType "o_inf";
 	_markerCO setMarkerColor "ColorRed";
