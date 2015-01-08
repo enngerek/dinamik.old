@@ -17,7 +17,7 @@ Görevi tammalamak için kasaba şehirdeki tüm direnişler öldürülmelidir.
 Görevi tamamlamak için deniz mayınları etkisiz hale getirilmelidir.Oyun motorunun kısıtlaması olarak sadece Patlayıcı uzmanı slotu mayınları etkisiz hale getirebilmektedir.
 
 - Düşen uçağımızın pilotunu enkaz alanından kurtar.
-Görevi tamamlamak için pilot bulunup Karargaha getirilmeli ve enkaz alanının çevresindeki 500m alandaki düşman askerleri öldürümelidir.Enkaz alanı haritada işaretlidir.Kayıp pilot enkaz alanının 200m çevresinde aranmalıdır.
+Görevi tamamlamak için pilot bulunup Karargaha getirilmeli ve enkaz alanının çevresindeki 500m içindeki tüm düşman askerleri öldürümelidir.Enkaz alanı haritada işaretlidir.Kayıp pilot enkaz alanının 200m çevresinde aranmalıdır.
 
 - Düşürülen UAV enkazını bularak harddiskini kopyala:
 Görevi tamamlamak için haritada yeri işaretli olan enkaza ulaşılmalıdır.Enkaz yanında iken aktif olacak action menu'den "Harddiki Kopyala" seçilmeli ve 500m çevredeki düşman askerleri öldürülmelidir.
@@ -29,6 +29,6 @@ Görevi tamamlamak için denizaltının demirlediği limana ulaşılmalı deniza
 Görevi tamamlamak için gazeteci bulunarak Karargaha getirilmelidir.Rehine, haritada işaretlenmiş dairesel marker alanın içindeki binalarda aranmalıdır.
 
 - Silah taşıyan konvoyu imha et :
-Görevi tamamlamak için konvoydaki tüm askerler öldürülmelidir.Konvoy 7 araçtan oluşmaktdır.Dikkat ! Bazen araçlar yolda veya spawn oldukları noktalarda objelerde takılabiliyor.7 araç saydığınızdan emin olun.Başlnagıç noktasına doğru araçları bulup imha edin.
+Görevi tamamlamak için konvoydaki tüm askerler öldürülmelidir.Konvoy 7 araçtan oluşmaktdır.Dikkat ! Bazen araçlar yolda veya spawn oldukları noktalarda objelerde takılabiliyor.7 araç saydığınızdan emin olun.Aksi halde başlangıç noktasına doğru araçları bulup imha edin.
 
 - Sıhhi Tahliye :
