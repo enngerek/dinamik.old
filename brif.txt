@@ -19,8 +19,10 @@ Görevi tamamlamak için deniz mayınları etkisiz hale getirilmelidir.Oyun moto
 - Düşen uçağımızın pilotunu enkaz alanından kurtar.
 Görevi tamamlamak için pilot bulunup Karargaha getirilmeli ve enkaz alanının çevresindeki 500m alandaki düşman askerleri öldürümelidir.Enkaz alanı haritada işaretlidir.Kayıp pilot enkaz alanının 200m çevresinde aranmalıdır.
 
-Düşürülen UAV enkazını bularak harddiskini kopyala
-Düşman denizaltı aracına sabotaj.
+-Düşürülen UAV enkazını bularak harddiskini kopyala:
+Görevi tamamlamak için haritada yeri işaretli olan enkaza ulaşılmalıdır.Enkaz yanında iken aktif olacak action menu'den "Harddiki Kopyala" seçilmeli ve 500m çevredeki düşman askerleri öldürüşmelidir.
+
+düşn denizaltı aracına sabotaj.
 Rehin alınan gazeteciyi kurtar.
 Direnişçilere ait kampı basarak imha et.
 Silah deposuna baskın yaparak, düşmana ait silah muhimmatı imha et.
