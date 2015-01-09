@@ -6,70 +6,73 @@ _mrkSpawngorevtibbitah = getMarkerPos _secilenarraytibbitah;
 */
 _mrkSpawngorevtibbitah = getMarkerPos "tıbbitah_1";
 
-_markerSO = createMarker ["mob_rescue", _mrkSpawnPos];
-	_markerSO setMarkerType "mil_objective";
-	_markerSO setMarkerColor "ColorBlue";
-	_markerSO setMarkerText "SUPPORT OP";
-	_markerSO setMarkerSize [1,1];
+_markergO = createMarker ["_mob_tibbitahliye", _mrkSpawngorevtibbitah];
+	_markergO setMarkerType "mil_objective";
+	_markergO setMarkerColor "ColorBlue";
+	_markergO setMarkerText "SUPPORT OP";
+	_markergO setMarkerSize [1,1];
 	
-	_null = [west, "mob_rescue", ["Evac the wounded from the AO and bring it to MASH in Loy Manara AB", "MEDEVAC", "MEDEVAC"], getMarkerPos "mob_rescue", false] spawn BIS_fnc_taskCreate;
-	_null = ["mob_rescue", "CREATED"] spawn BIS_fnc_taskSetState;
+	_null = [west, "_mob_tibbitahliye", ["Evac the wounded from the AO and bring it to MASH in Loy Manara AB", "MEDEVAC", "MEDEVAC"], getMarkerPos "_mob_tibbitahliye", false] spawn BIS_fnc_taskCreate;
+	_null = ["_mob_tibbitahliye", "CREATED"] spawn BIS_fnc_taskSetState;
 	
 	sleep 30;
 
 	//creating the vehicle
 
-	_veh = ["B_MRAP_01_gmg_F","B_MRAP_01_F","B_Truck_01_transport_F"] call BIS_fnc_selectRandom;
+	_aracsec = ["B_MRAP_01_gmg_F","B_MRAP_01_F","B_Truck_01_transport_F"] call BIS_fnc_selectRandom;
 	
-	_truck = createVehicle [_veh,[(getMarkerpos _markerSO select 0) + 3, getMarkerpos _markerSO select 1,0],[], 0, "NONE"];
-	_truck setDammage 0.8;
-	_truck allowDamage false;
-	_truck setFuel 0;
+	_arac = createVehicle [_aracsec,[(getMarkerpos _markergO select 0) + 3, getMarkerpos _markergO select 1,0],[], 0, "NONE"];
+	_arac setDammage 0.8;
+	_arac allowDamage false;
+	_arac setFuel 0;
 	
 	_grp = createGroup WEST;
-	_men1 = _grp createUnit ["B_Soldier_F",[(getMarkerpos _markerSO select 0) + 10, getMarkerpos _markerSO select 1,0], [], 0, "NONE"];
-	_men1 allowDamage false;
-	_men1 setCaptive true;
-	_men1 setHit ["hands",1];
-	_men1 setHit ["head_hit",0.4];
-	_men1 setHit ["body",0.5];
-	_men1 playMoveNow "AinjPpneMstpSnonWrflDnon";
-	_men1 disableAI "MOVE";
-	_men1 disableAI "ANIM";
-	escolta = _men1;
-	publicVariable "escolta";
+	_yarali = _grp createUnit ["B_Soldier_F",[(getMarkerpos _markergO select 0) + 10, getMarkerpos _markergO select 1,0], [], 0, "NONE"];
+	_yarali allowDamage false;
+	_yarali setCaptive true;
+	_yarali setHit ["hands",1];
+	_yarali setHit ["head_hit",0.4];
+	_yarali setHit ["body",0.5];
+	_yarali playMoveNow "AinjPpneMstpSnonWrflDnon";
+	_yarali disableAI "MOVE";
+	_yarali disableAI "ANIM";
 	
-	_grp1S = [getMarkerPos _markerSO, WEST, (configfile >> "CfgGroups" >> "West" >> "BLU_F" >> "Infantry" >> "BUS_InfTeam")] call BIS_fnc_spawnGroup;
-	nul = [_grp1S,getPos _truck, 150] call BIS_fnc_taskPatrol;
+/////////////////////////////////////
+[[_yarali],"fnc_rec_rehinekurtar",true,true] spawn BIS_fnc_MP;
+////////////////////////////////////////////////	
+	_tim1 = [getMarkerPos _markergO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
+] call BIS_fnc_spawnGroup;
+	sleep 1;nul = [_tim1,getPos _arac, 150] call BIS_fnc_taskPatrol;
 	
-	_grp2S = [getMarkerPos _markerSO, WEST, (configfile >> "CfgGroups" >> "West" >> "BLU_F" >> "Infantry" >> "BUS_InfTeam")] call BIS_fnc_spawnGroup;
-	nul = [_grp2S,getPos _truck, 150] call BIS_fnc_taskPatrol;
+	_tim2 = [getMarkerPos _markergO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
+] call BIS_fnc_spawnGroup;
+	sleep 1;nul = [_tim2,getPos _arac, 150] call BIS_fnc_taskPatrol;
 	
-	waitUntil { _men1 distance getMarkerPos "mash" < 50 };
+	waitUntil { _yarali distance getMarkerPos "tabus" < 50 };
 	
-	[_men1] join grpNull;
+	[_yarali] join grpNull;
 	
-	null = ["mob_rescue", "SUCCEEDED"] spawn BIS_fnc_taskSetState;
+	null = ["_mob_tibbitahliye", "SUCCEEDED"] spawn BIS_fnc_taskSetState;
 	
 	sleep 10;
 	
-	deleteMarker _markerSO;
-	{deleteVehicle _x} forEach units _grp1S;
-	{deleteVehicle _x} forEach units _grp2S;
-	deleteGroup _grp1S;
-	deleteGroup _grp2S;
-	deleteVehicle _truck;
-	deleteVehicle _men1;
+	deleteMarker _markergO;
+	{deleteVehicle _x} forEach units _tim1;
+	{deleteVehicle _x} forEach units _tim2;
+	deleteGroup _tim1;
+	deleteGroup _tim2;
+	deleteVehicle _arac;
+	deleteVehicle _yarali;
 	deleteGroup _grp;
 
-	_myHint ="Good Job!";
+	_myHint ="Tebrikler ! Görev tamamlandı";
 	GlobalHint = _myHint;
 	publicVariable "GlobalHint";
 	hintsilent parseText _myHint;
 
-	_mySChat ="OBJECTIVE COMPLETED";
+	_mySChat ="Görev Tamam";
 	GlobalSCHat = _mySChat;
 	publicVariable "GlobalSCHat";
 	player sideChat _mySChat;
 	
-	[west, "mob_rescue"] call LARs_fnc_removeTask;
+	[west, "_mob_tibbitahliye"] call LARs_fnc_removeTask;
