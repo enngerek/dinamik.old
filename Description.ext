@@ -23,36 +23,66 @@ disabledAI = 1;
 enableDebugConsole = 1;
 allowFunctionsRecompile = 1;
 
-/*
-#include "ATM_airdrop\dialog.hpp"
+
+//#include "ATM_airdrop\dialog.hpp"
+#include "INS_revive\description.hpp"
+
+class Params
+{
+	// Example Parameter
+	class EmtpyLine0 {
+		title = ":: Mission Settings";
+		values[]={0,0};
+		texts[]={ "",""};
+		default = 0;
+	};
+	class PARAM_TimeOfDay
+	{
+		title = "    Time of Day";
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
+		texts[] = {"00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"};
+		default = 14;
+	};
+	
+	//// Respawn Script - Start ////
+	#include "INS_revive\params.hpp"
+	//// Respawn Script - End   ////
+};
+
+class RscTitles
+{
+	//// Respawn Script - Start ////
+	#include "INS_revive\rsctitles.hpp"
+	//// Respawn Script - End   ////
+};
 
 class CfgSounds
 {
-   sounds[] = {Vent,Vent2,Para};
+#include "INS_revive\cfgsounds.hpp"
+
+/*sounds[] = {Vent,Vent2,Para};
 
 	class Vent {name="Vent";sound[]={ATM_airdrop\data\Vent.ogg,db-11,1.0};titles[] = {};};
 	class Vent2 {name="Vent2";sound[]={ATM_airdrop\data\Vent2.ogg,db-11,1.0};titles[] = {};};
 	class Para {name="Para";sound[]={ATM_airdrop\data\parachute.ogg,db-11,1.0};titles[] = {};};
+	*/
 };
 
-class CfgDebriefing
-{  
-    class oyunsonu
-    {
-        title = "TEBRİKLER ";
-        subtitle = "";
-        description = "GÖREV BAŞARI İLE TAMAMLANDI";
-        pictureBackground = "";
-        picture = "b_inf";
-        pictureColor[] = {0.0,0.3,0.6,1};
-    };
-}; 
 
-*/
-//#include "VAS\menu.hpp"
+
+
 
 class CfgFunctions
 {
 	//#include "VAS\cfgfunctions.hpp"
         #include "ws_fnc\config.hpp"
+		#include "INS_revive\cfgfunctions.hpp"
+};
+
+class Extended_PreInit_EventHandlers {
+	// Replace mission_name with name of your mission
+	class mission_name { 
+		// If has ace mode, enable ace wound system
+		serverInit = "ace_sys_wounds_enabled = true; publicVariable 'ace_sys_wounds_enabled';";
+	};
 };
