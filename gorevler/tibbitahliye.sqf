@@ -1,10 +1,10 @@
 
-/*_markerarray = ["tıbbitah_1","tıbbitah_2","tıbbitah_3","tıbbitah_4","tıbbitah_5","tıbbitah_6","tıbbitah_7","tıbbitah_8","tıbbitah_9","tıbbitah_10"] ;
-_secilenarray = _markerarray call BIS_fnc_selectRandom;
-_markerArray=_markerArray - [_secilenarray];
-_mrkSpawnTown = getMarkerPos _secilenarray;
+/*_markerarraytibbitah = ["tıbbitah_1","tıbbitah_2","tıbbitah_3","tıbbitah_4","tıbbitah_5","tıbbitah_6","tıbbitah_7","tıbbitah_8","tıbbitah_9","tıbbitah_10"] ;
+_secilenarraytibbitah = _markerarraytibbitah call BIS_fnc_selectRandom;
+_markerarraytibbitah=_markerarraytibbitah - [_secilenarraytibbitah];
+_mrkSpawngorevtibbitah = getMarkerPos _secilenarraytibbitah;
 */
-_mrkSpawnPos = getMarkerPos "tıbbitah_1";
+_mrkSpawngorevtibbitah = getMarkerPos "tıbbitah_1";
 
 _markerSO = createMarker ["mob_rescue", _mrkSpawnPos];
 	_markerSO setMarkerType "mil_objective";
