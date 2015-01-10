@@ -11,7 +11,8 @@ class Mission
 		"A3_Modules_F",
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_INDEP",
-		"A3_Weapons_F_Ammoboxes"
+		"A3_Weapons_F_Ammoboxes",
+		"A3_Structures_F_Civ_InfoBoards"
 	};
 	addOnsAuto[]=
 	{
@@ -23,6 +24,7 @@ class Mission
 		"A3_Characters_F_INDEP",
 		"A3_Structures_F_Mil_Helipads",
 		"A3_Weapons_F_Ammoboxes",
+		"A3_Structures_F_Civ_InfoBoards",
 		"a3_map_altis"
 	};
 	randomSeed=4785077;
@@ -56,10 +58,10 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20662.701,3.6588997e-005,19528.643};
+					position[]={14176.12,19.559563,16284.064};
 					id=0;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_medic_F";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
@@ -144,7 +146,7 @@ class Mission
 					position[]={14176.243,19.527647,16288.809};
 					id=3;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_Soldier_TL_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -160,7 +162,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14184.75,19.562613,16281.808};
+					position[]={14173.402,19.541594,16286.761};
 					id=4;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -237,7 +239,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=4;
+		items=6;
 		class Item0
 		{
 			position[]={25286.58,83.654442,21815.438};
@@ -274,13 +276,32 @@ class Mission
 			skill=0.60000002;
 			init="0=[""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal;this allowdammage false;";
 		};
+		class Item4
+		{
+			position[]={14263.216,20.18606,16223.191};
+			azimut=123.943;
+			id=13;
+			side="EMPTY";
+			vehicle="Land_InfoStand_V2_F";
+			skill=0.60000002;
+			init="this addAction[""Virtual Vehicle Spawner"",VVS_fnc_openVVS,[""aracspwn"",""All""]]; ";
+		};
+		class Item5
+		{
+			position[]={14247.31,20.224735,16223.063};
+			azimut=33.710621;
+			id=14;
+			side="EMPTY";
+			vehicle="Land_HelipadSquare_F";
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=89;
+		items=91;
 		class Item0
 		{
-			position[]={14181.271,19.444246,16291.023};
+			position[]={14181.271,19.456501,16290.726};
 			name="respawn_west";
 			type="Empty";
 		};
@@ -846,6 +867,21 @@ class Mission
 			position[]={12734.875,45.919529,19705.557};
 			name="tıbbitah_10";
 			type="Empty";
+		};
+		class Item89
+		{
+			position[]={14247.219,20.225454,16222.985};
+			name="aracspwn";
+			type="Empty";
+			angle=21.188862;
+		};
+		class Item90
+		{
+			position[]={14264.577,20.184628,16222.94};
+			name="tasit";
+			text="Garaj";
+			type="c_car";
+			colorName="ColorBlue";
 		};
 	};
 	class Sensors

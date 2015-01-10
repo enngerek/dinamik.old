@@ -26,7 +26,7 @@ allowFunctionsRecompile = 1;
 
 //#include "ATM_airdrop\dialog.hpp"
 #include "INS_revive\description.hpp"
-
+#include "VVS\menu.h"
 class Params
 {
 	// Example Parameter
@@ -77,6 +77,7 @@ class CfgFunctions
 	//#include "VAS\cfgfunctions.hpp"
         #include "ws_fnc\config.hpp"
 		#include "INS_revive\cfgfunctions.hpp"
+#include "VVS\Functions.h"
 };
 
 class Extended_PreInit_EventHandlers {
