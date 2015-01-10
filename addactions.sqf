@@ -55,3 +55,8 @@ fnc_rec_rehinekurtar = {
 	_pow = _this select 0;
 	_pow addAction ["<t color='#FF6600'>Beni Takip Et</t>", "scripts\arrest.sqf", nil, 6, true, true, "", ""];
 };
+fnc_rec_tibbitahliye = {
+	private ["_pow"];
+	_pow = _this select 0;
+	_pow addAction ["<t color='#FF6600'>Araca yükle</t>", "scripts\tibbitahliye.sqf", nil, 6, true, true, "", ""];
+};

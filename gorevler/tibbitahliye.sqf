@@ -17,8 +17,7 @@ _markergO = createMarker ["_mob_tibbitahliye", _mrkSpawngorevtibbitah];
 	
 	sleep 30;
 
-	//creating the vehicle
-
+	
 	_aracsec = ["B_MRAP_01_gmg_F","B_MRAP_01_F","B_Truck_01_transport_F"] call BIS_fnc_selectRandom;
 	
 	_arac = createVehicle [_aracsec,[(getMarkerpos _markergO select 0) + 3, getMarkerpos _markergO select 1,0],[], 0, "NONE"];
@@ -29,6 +28,7 @@ _markergO = createMarker ["_mob_tibbitahliye", _mrkSpawngorevtibbitah];
 	_grp = createGroup WEST;
 	_yarali = _grp createUnit ["B_Soldier_F",[(getMarkerpos _markergO select 0) + 10, getMarkerpos _markergO select 1,0], [], 0, "NONE"];
 	_yarali allowDamage false;
+	removeallweapons _yarali;
 	_yarali setCaptive true;
 	_yarali setHit ["hands",1];
 	_yarali setHit ["head_hit",0.4];
@@ -36,9 +36,11 @@ _markergO = createMarker ["_mob_tibbitahliye", _mrkSpawngorevtibbitah];
 	_yarali playMoveNow "AinjPpneMstpSnonWrflDnon";
 	_yarali disableAI "MOVE";
 	_yarali disableAI "ANIM";
+////////////////////////////////////////////////	
+//_ambulans=createVehicle ["B_Heli_Light_01_F", getMarkerpos "oparaclari" , [], 0, "NONE"];
 	
 /////////////////////////////////////
-[[_yarali],"fnc_rec_rehinekurtar",true,true] spawn BIS_fnc_MP;
+[[_yarali],"fnc_rec_tibbitahliye",true,true] spawn BIS_fnc_MP;
 ////////////////////////////////////////////////	
 	_tim1 = [getMarkerPos _markergO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 ] call BIS_fnc_spawnGroup;
@@ -47,6 +49,13 @@ _markergO = createMarker ["_mob_tibbitahliye", _mrkSpawngorevtibbitah];
 	_tim2 = [getMarkerPos _markergO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 ] call BIS_fnc_spawnGroup;
 	sleep 1;nul = [_tim2,getPos _arac, 150] call BIS_fnc_taskPatrol;
+	
+	//waitUntil { _yarali distance getPos _ambulans < 10 };
+	
+	_myHint ="Yaralı kişi arac bindirildi";
+	GlobalHint = _myHint;
+	publicVariable "GlobalHint";
+	hintsilent parseText _myHint;
 	
 	waitUntil { _yarali distance getMarkerPos "tabus" < 50 };
 	
