@@ -61,7 +61,7 @@ INS_REV_FNCT_param_to_value = {
 
 INS_REV_CFG_list_of_respawn_locations_blufor = [INS_REV_CFG_list_of_respawn_locations_blufor] call INS_REV_FNCT_remove_null_objects;
 INS_REV_CFG_list_of_respawn_locations_opfor = [INS_REV_CFG_list_of_respawn_locations_opfor] call INS_REV_FNCT_remove_null_objects;
-INS_REV_CFG_list_of_ammobox = [INS_REV_CFG_list_of_ammobox] call INS_REV_FNCT_remove_null_objects;
+//INS_REV_CFG_list_of_ammobox = [INS_REV_CFG_list_of_ammobox] call INS_REV_FNCT_remove_null_objects;
 
 // Get parameter value from description.ext
 for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do
@@ -240,11 +240,10 @@ if (!isNil "INS_REV_PARAM_respawn_location") then {
  "INS_REV_CFG_near_enemy_range",
  50 ] call INS_REV_FNCT_param_to_value;
 
-// Restore loadout on respawn
+// Restore loadout on respawn : Core Version
 ["INS_REV_PARAM_loadout_on_respawn",
  "INS_REV_CFG_loadout_on_respawn",
- true ] call INS_REV_FNCT_param_to_bool;
-
+ false ] call INS_REV_FNCT_param_to_bool;
 
 // Teamkiller Lock System
 ["INS_REV_PARAM_teamkiller_lock",
@@ -255,11 +254,6 @@ if (!isNil "INS_REV_PARAM_respawn_location") then {
 ["INS_REV_PARAM_teamkill_limit",
  "INS_REV_CFG_teamkill_limit",
  3 ] call INS_REV_FNCT_param_to_value;
-
-// VTS Weapon Resting System
-["INS_REV_PARAM_vts_resting",
- "INS_REV_CFG_vts_resting",
- true ] call INS_REV_FNCT_param_to_bool;
 
 // Virtual Ammobox System
 ["INS_REV_PARAM_virtual_ammobox",

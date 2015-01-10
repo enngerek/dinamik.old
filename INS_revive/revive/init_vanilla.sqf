@@ -53,12 +53,6 @@ if (!isDedicated) then
 		// Wait until player initialized
 		waitUntil {!(isNull player)};
 		
-		
-		// Set makers when player dead (client side)
-		if (!INS_REV_CFG_player_marker_serverSide) then {
-			INS_REV_thread_draw_dead_marker = [] spawn INS_REV_FNCT_draw_dead_marker;
-		};
-		
 		// Display Respawn Locations Marker
 		if (INS_REV_CFG_displayRespawnLocationMarker) then {
 			[] spawn INS_REV_FNCT_displayRespawnLocationMarker;
@@ -94,7 +88,6 @@ if (!isDedicated) then
 			//player addEventHandler ["HandleDamage",{BIS_hitArray = _this; BIS_wasHit = true; _this select 2;} ];
 			//player removeAllEventHandlers "HandleDamage";
 			player addEventHandler ["HandleDamage", {_this call INS_REV_FNCT_clientHD}];
-			player sidechat "ok";
 		};
 		sleep 0.5;
 		
