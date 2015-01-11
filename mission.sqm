@@ -61,9 +61,9 @@ class Mission
 		forecastWind=0.099999994;
 		forecastWaves=0.099999994;
 		forecastLightnings=0.099999994;
-		year=2035;
-		month=6;
-		day=24;
+		year=2015;
+		month=1;
+		day=11;
 		hour=12;
 		minute=0;
 		startFogDecay=0.013;
@@ -71,13 +71,13 @@ class Mission
 	};
 	class Groups
 	{
-		items=21;
+		items=17;
 		class Item0
 		{
 			side="WEST";
 			class Vehicles
 			{
-				items=1;
+				items=5;
 				class Item0
 				{
 					position[]={14176.12,19.559563,16284.064};
@@ -88,6 +88,46 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="komutan";
+					init="OnMapSingleClick ""player SetPos _pos"";this allowdammage false;";
+				};
+				class Item1
+				{
+					position[]={14174.14,19.539532,16287.07};
+					id=1;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="OnMapSingleClick ""player SetPos _pos"";this allowdammage false;";
+				};
+				class Item2
+				{
+					position[]={14178.417,19.521658,16288.342};
+					id=2;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="OnMapSingleClick ""player SetPos _pos"";this allowdammage false;";
+				};
+				class Item3
+				{
+					position[]={14180.354,19.535978,16286.288};
+					id=3;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="OnMapSingleClick ""player SetPos _pos"";this allowdammage false;";
+				};
+				class Item4
+				{
+					position[]={14176.243,19.527647,16288.809};
+					id=4;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					skill=0.60000002;
 					init="OnMapSingleClick ""player SetPos _pos"";this allowdammage false;";
 				};
 			};
@@ -129,7 +169,7 @@ class Mission
 							typeName="Forced";
 						};
 					};
-					id=1;
+					id=5;
 					side="LOGIC";
 					vehicle="ModuleCurator_F";
 					leader=1;
@@ -147,7 +187,7 @@ class Mission
 				class Item0
 				{
 					position[]={15593.591,-0.43978509,14857.563};
-					id=2;
+					id=6;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
@@ -159,44 +199,6 @@ class Mission
 		};
 		class Item3
 		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={14176.243,19.527647,16288.809};
-					id=3;
-					side="WEST";
-					vehicle="B_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					init="OnMapSingleClick ""player SetPos _pos"";this allowdammage false;";
-				};
-			};
-		};
-		class Item4
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={14174.14,19.539532,16287.07};
-					id=4;
-					side="WEST";
-					vehicle="B_Soldier_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					init="OnMapSingleClick ""player SetPos _pos"";this allowdammage false;";
-				};
-			};
-		};
-		class Item5
-		{
 			side="GUER";
 			class Vehicles
 			{
@@ -205,7 +207,7 @@ class Mission
 				{
 					presence=0;
 					position[]={8442.915,108.3764,25112.877};
-					id=5;
+					id=7;
 					side="GUER";
 					vehicle="I_soldier_F";
 					leader=1;
@@ -213,7 +215,7 @@ class Mission
 				};
 			};
 		};
-		class Item6
+		class Item4
 		{
 			side="EAST";
 			class Vehicles
@@ -223,7 +225,7 @@ class Mission
 				{
 					presence=0;
 					position[]={8458.0088,105.53542,25115.559};
-					id=6;
+					id=8;
 					side="EAST";
 					vehicle="O_officer_F";
 					leader=1;
@@ -231,7 +233,7 @@ class Mission
 				};
 			};
 		};
-		class Item7
+		class Item5
 		{
 			side="LOGIC";
 			class Vehicles
@@ -268,7 +270,7 @@ class Mission
 							typeName="advanced";
 						};
 					};
-					id=7;
+					id=9;
 					side="LOGIC";
 					vehicle="cse_sys_backblast";
 					leader=1;
@@ -277,7 +279,7 @@ class Mission
 				};
 			};
 		};
-		class Item8
+		class Item6
 		{
 			side="LOGIC";
 			class Vehicles
@@ -338,7 +340,7 @@ class Mission
 							typeName="hideAmmoValues";
 						};
 					};
-					id=8;
+					id=10;
 					side="LOGIC";
 					vehicle="cse_sys_equipment";
 					leader=1;
@@ -347,7 +349,7 @@ class Mission
 				};
 			};
 		};
-		class Item9
+		class Item7
 		{
 			side="LOGIC";
 			class Vehicles
@@ -372,7 +374,7 @@ class Mission
 							typeName="cursorTargetDistance";
 						};
 					};
-					id=9;
+					id=11;
 					side="LOGIC";
 					vehicle="cse_sys_tags";
 					leader=1;
@@ -381,7 +383,7 @@ class Mission
 				};
 			};
 		};
-		class Item10
+		class Item8
 		{
 			side="LOGIC";
 			class Vehicles
@@ -400,7 +402,7 @@ class Mission
 							typeName="adjustment";
 						};
 					};
-					id=10;
+					id=12;
 					side="LOGIC";
 					vehicle="cse_adjust_stamina";
 					leader=1;
@@ -409,7 +411,7 @@ class Mission
 				};
 			};
 		};
-		class Item11
+		class Item9
 		{
 			side="LOGIC";
 			class Vehicles
@@ -464,7 +466,7 @@ class Mission
 							typeName="soundVolume";
 						};
 					};
-					id=11;
+					id=13;
 					side="LOGIC";
 					vehicle="cse_moduleAmbianceSound";
 					leader=1;
@@ -473,7 +475,7 @@ class Mission
 				};
 			};
 		};
-		class Item12
+		class Item10
 		{
 			side="LOGIC";
 			class Vehicles
@@ -612,7 +614,7 @@ class Mission
 							typeName="PRECISION";
 						};
 					};
-					id=12;
+					id=14;
 					side="LOGIC";
 					vehicle="cse_AB_moduleAdvancedBallistics";
 					leader=1;
@@ -621,7 +623,7 @@ class Mission
 				};
 			};
 		};
-		class Item13
+		class Item11
 		{
 			side="LOGIC";
 			class Vehicles
@@ -664,7 +666,7 @@ class Mission
 							typeName="useEquipment";
 						};
 					};
-					id=13;
+					id=15;
 					side="LOGIC";
 					vehicle="cse_sys_advanced_interaction";
 					leader=1;
@@ -673,7 +675,7 @@ class Mission
 				};
 			};
 		};
-		class Item14
+		class Item12
 		{
 			side="LOGIC";
 			class Vehicles
@@ -692,7 +694,7 @@ class Mission
 							typeName="DEAFNESS_EFFECT_INTENSITY";
 						};
 					};
-					id=14;
+					id=16;
 					side="LOGIC";
 					vehicle="cse_sys_combatdeaf";
 					leader=1;
@@ -701,7 +703,7 @@ class Mission
 				};
 			};
 		};
-		class Item15
+		class Item13
 		{
 			side="LOGIC";
 			class Vehicles
@@ -732,7 +734,7 @@ class Mission
 							typeName="allowShoulderTap";
 						};
 					};
-					id=15;
+					id=17;
 					side="LOGIC";
 					vehicle="cse_sys_groups";
 					leader=1;
@@ -741,7 +743,7 @@ class Mission
 				};
 			};
 		};
-		class Item16
+		class Item14
 		{
 			side="LOGIC";
 			class Vehicles
@@ -750,7 +752,7 @@ class Mission
 				class Item0
 				{
 					position[]={14675.677,0.04787923,13745.149};
-					id=16;
+					id=18;
 					side="LOGIC";
 					vehicle="cse_sys_logistics";
 					leader=1;
@@ -759,7 +761,7 @@ class Mission
 				};
 			};
 		};
-		class Item17
+		class Item15
 		{
 			side="LOGIC";
 			class Vehicles
@@ -778,7 +780,7 @@ class Mission
 							typeName="genericSpareBarrel";
 						};
 					};
-					id=17;
+					id=19;
 					side="LOGIC";
 					vehicle="cse_sys_weaponheat";
 					leader=1;
@@ -787,45 +789,7 @@ class Mission
 				};
 			};
 		};
-		class Item18
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={14179.424,19.529755,16287.219};
-					id=18;
-					side="WEST";
-					vehicle="B_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					init="OnMapSingleClick ""player SetPos _pos"";this allowdammage false;";
-				};
-			};
-		};
-		class Item19
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={14177.021,19.54318,16286.521};
-					id=19;
-					side="WEST";
-					vehicle="B_Soldier_TL_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					init="OnMapSingleClick ""player SetPos _pos"";this allowdammage false;";
-				};
-			};
-		};
-		class Item20
+		class Item16
 		{
 			side="EAST";
 			class Vehicles
@@ -908,7 +872,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Box_NATO_AmmoVeh_F";
 			skill=0.60000002;
-			init="this addAction[""<t color='#ff1111'>Virtual Ammobox</t>"", ""VAS\open.sqf""];";
+			init="this addAction[""<t color='#ff1111'>Virtual Ammobox</t>"", ""VAS\open.sqf""];this addAction[""<t color='#ff9900'>HALO jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this allowdammage false;";
 		};
 		class Item4
 		{
@@ -965,7 +929,7 @@ class Mission
 		class Item10
 		{
 			position[]={11577.155,23.622713,11993.309};
-			azimut=-57.720894;
+			azimut=-57.720901;
 			id=34;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
@@ -984,12 +948,12 @@ class Mission
 		class Item12
 		{
 			position[]={11588.248,23.42654,12016.978};
-			azimut=-134.39217;
+			azimut=-134.392;
 			id=36;
 			side="EMPTY";
 			vehicle="Box_NATO_AmmoVeh_F";
 			skill=0.60000002;
-			init="this addAction[""<t color='#ff1111'>Virtual Ammobox</t>"", ""VAS\open.sqf""];";
+			init="this addAction[""<t color='#ff1111'>Virtual Ammobox</t>"", ""VAS\open.sqf""];this addAction[""<t color='#ff9900'>HALO jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this allowdammage false;";
 		};
 		class Item13
 		{

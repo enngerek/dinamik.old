@@ -20,11 +20,11 @@ _mrkSpawngorevtibbitah = getMarkerPos _secilenarraytibbitah;
 
 _markergO = createMarker ["_mob_tibbitahliye", _mrkSpawngorevtibbitah];
 	_markergO setMarkerType "mil_objective";
-	_markergO setMarkerColor "ColorBlue";
-	_markergO setMarkerText "SUPPORT OP";
+	_markergO setMarkerColor "Colorred";
+	_markergO setMarkerText " Tıbbi Tahliye";
 	_markergO setMarkerSize [1,1];
 	
-	_null = [west, "_mob_tibbitahliye", ["Evac the wounded from the AO and bring it to MASH in Loy Manara AB", "MEDEVAC", "MEDEVAC"], getMarkerPos "_mob_tibbitahliye", false] spawn BIS_fnc_taskCreate;
+	_null = [west, "_mob_tibbitahliye", ["Bir aracımız pusuya düşürülmüştür.Derhal olay yerine intikal ederek yaralı askeri karargaha getirin.", "Tıbbi Tahliye", "Tıbbi Tahliye"], getMarkerPos "_mob_tibbitahliye", false] spawn BIS_fnc_taskCreate;
 	_null = ["_mob_tibbitahliye", "CREATED"] spawn BIS_fnc_taskSetState;
 	
 	sleep 30;
@@ -1331,8 +1331,8 @@ _markerCO = createMarker ["mob_clear", _mrkSpawnTown];
 	
 	sleep 1;
 	
-	_mhq = createVehicle ["O_Truck_03_covered_F", _newPos,[], 0, "NONE"];
-	//_camonet = createVehicle ["CamoNet_OPFOR_big_F", getPos _mhq, [], 0, "CAN_COLLIDE"];
+	_arachq = createVehicle ["O_Truck_03_covered_F", _newPos,[], 0, "NONE"];
+	//_camonet = createVehicle ["CamoNet_OPFOR_big_F", getPos _arachq, [], 0, "CAN_COLLIDE"];
 	
 
 	_newPos2 = [getmarkerpos _markerCO,[0,30],random 360,0,[1,250]," O_APC_Wheeled_02_rcws_F"] call SHK_pos;
@@ -1355,7 +1355,7 @@ _markerCO = createMarker ["mob_clear", _mrkSpawnTown];
 	sleep 2;
 	[_newPos2, 10, "I_G_Offroad_01_armed_F", _ifv1] call BIS_fnc_spawnvehicle;
 	sleep 2;
-	nul = [_ifv1,getPos _mhq, 250] call BIS_fnc_taskPatrol;
+	nul = [_ifv1,getPos _arachq, 250] call BIS_fnc_taskPatrol;
 	sleep 2;
 	[_newPos3, 10, "I_G_Offroad_01_armed_F", _ifv1] call BIS_fnc_spawnvehicle;
 	sleep 2;
@@ -1366,19 +1366,19 @@ _markerCO = createMarker ["mob_clear", _mrkSpawnTown];
 	
 	_grp1C = [getMarkerPos _markerCO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 ] call BIS_fnc_spawnGroup;
-	sleep 2; = [_grp1C,getPos _mhq, 150] call BIS_fnc_taskPatrol;
+	sleep 2; nul= [_grp1C,getPos _arachq, 150] call BIS_fnc_taskPatrol;
 	
 	_grp2C = [getMarkerPos _markerCO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 
 ] call BIS_fnc_spawnGroup;
-	sleep 2; = [_grp2C,getPos _mhq, 200] call BIS_fnc_taskPatrol;
+	sleep 2; nul= [_grp2C,getPos _arachq, 200] call BIS_fnc_taskPatrol;
 	
 	_grp3C = [getMarkerPos _markerCO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 
 ] call BIS_fnc_spawnGroup;
-	sleep 2; = [_grp3C,getPos _mhq, 250] call BIS_fnc_taskPatrol;
+	sleep 2; nul= [_grp3C,getPos _arachq, 250] call BIS_fnc_taskPatrol;
 	
-waitUntil {{{alive _x && (_x distance _mhg < 700)}count units _x == 0}count [_grp1C,_grp2C,_grp3C,] == 3};
+waitUntil {{{alive _x && (_x distance _arachq < 700)}count units _x == 0}count [_grp1C,_grp2C,_grp3C] == 3};
 
 
 	_null = ["mob_clear", "SUCCEEDED"] spawn BIS_fnc_taskSetState;
@@ -1387,7 +1387,7 @@ waitUntil {{{alive _x && (_x distance _mhg < 700)}count units _x == 0}count [_gr
 
 	deleteMarker _markerCO;
 
-	deleteVehicle _mhq;
+	deleteVehicle _arachq;
 
 	deleteVehicle _trg;
 

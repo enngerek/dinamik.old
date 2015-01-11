@@ -11,7 +11,7 @@ onLoadMission = "www.turkarmabirligi.net";
 onLoadIntroTime = true;
 onLoadMissionTime = true;
 onLoadName = |TAB| Operasyon DİNAMİK;
-loadScreen = "";
+loadScreen = "gorevlogo.paa";
 
 aiKills = 0;
 briefing = 1;
@@ -24,7 +24,7 @@ enableDebugConsole = 1;
 allowFunctionsRecompile = 1;
 
 
-//#include "ATM_airdrop\dialog.hpp"
+#include "ATM_airdrop\dialog.hpp"
 #include "INS_revive\description.hpp"
 #include "VVS\menu.h"
 #include "VAS\menu.hpp"
@@ -62,12 +62,12 @@ class CfgSounds
 {
 #include "INS_revive\cfgsounds.hpp"
 
-/*sounds[] = {Vent,Vent2,Para};
+sounds[] = {Vent,Vent2,Para};
 
 	class Vent {name="Vent";sound[]={ATM_airdrop\data\Vent.ogg,db-11,1.0};titles[] = {};};
 	class Vent2 {name="Vent2";sound[]={ATM_airdrop\data\Vent2.ogg,db-11,1.0};titles[] = {};};
 	class Para {name="Para";sound[]={ATM_airdrop\data\parachute.ogg,db-11,1.0};titles[] = {};};
-	*/
+	
 };
 
 
