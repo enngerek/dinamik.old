@@ -825,7 +825,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={11624.506,23.339104,11991.868};
+					position[]={11614.929,23.48863,11989.026};
 					id=23;
 					side="EAST";
 					vehicle="O_recon_exp_F";
@@ -872,7 +872,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Box_NATO_AmmoVeh_F";
 			skill=0.60000002;
-			init="this addAction[""<t color='#ff1111'>Virtual Ammobox</t>"", ""VAS\open.sqf""];this addAction[""<t color='#ff9900'>HALO jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this allowdammage false;";
+			init="this addAction[""<t color='#ff1111'>Virtual Ammobox</t>"", ""VAS\open.sqf""];this addAction[""<t color='#ff9900'>HALO jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this allowdammage false;clearItemCargoGlobal this;clearMagazineCargoGlobal this;clearWeaponCargoGlobal this;";
 		};
 		class Item4
 		{
@@ -953,7 +953,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Box_NATO_AmmoVeh_F";
 			skill=0.60000002;
-			init="this addAction[""<t color='#ff1111'>Virtual Ammobox</t>"", ""VAS\open.sqf""];this addAction[""<t color='#ff9900'>HALO jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this allowdammage false;";
+			init="this addAction[""<t color='#ff1111'>Virtual Ammobox</t>"", ""VAS\open.sqf""];this addAction[""<t color='#ff9900'>HALO jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this allowdammage false;clearItemCargoGlobal this;clearMagazineCargoGlobal this;clearWeaponCargoGlobal this;";
 		};
 		class Item13
 		{
