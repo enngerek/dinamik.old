@@ -837,7 +837,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=16;
+		items=18;
 		class Item0
 		{
 			position[]={25286.58,83.654442,21815.438};
@@ -982,13 +982,33 @@ class Mission
 			vehicle="cse_crateCombatDeafness";
 			skill=0.60000002;
 		};
+		class Item16
+		{
+			position[]={14184.293,19.584854,16276.032};
+			id=40;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+			text="base";
+			init="this allowdammage false;";
+		};
+		class Item17
+		{
+			position[]={11609.322,23.360319,12009.161};
+			id=41;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			skill=0.60000002;
+			text="base2";
+			init="this allowdammage false;";
+		};
 	};
 	class Markers
 	{
 		items=95;
 		class Item0
 		{
-			position[]={14162.942,19.58,16268.441};
+			position[]={14170.362,19.534405,16287.838};
 			name="respawn_west";
 			type="Empty";
 		};
