@@ -6,7 +6,11 @@ Genel Özellikleri
 - Görevlerdeki bot sayısı ve araç dengesi 20 kişilik bir oyuncu grubuna denk gelecek şekilde ayarlanmıştır.
 - Oluşturulacak görev kendi içinde araç, gereç sayısı ve türü ile görev yeri açısından dinamiktir.
 - Her defasında bir yan görev türü oluşturulmakta bu görev tamamlandıktan sonra yenisi havuzdan rastgele seçilmektedir.
-- 4 kişilik Düşman Oyuncu slotu vardır.İstenirse 4 oyuncu bu slotlarda oyuna girerek karşı tarafın görevleri tamamlamasını engellemeye çalışabilir.(COOP-TVT) .
+- 4 kişilik Düşman Oyuncu slotu vardır.İstenirse 4 oyuncu bu slotlarda oyuna girerek karşı tarafın görevleri tamamlamasını engellemeye çalışabilir.(COOP-TVT)
+- INS revive : Yaralı oyuncu markerı, diğer oyuncu veya üsten respawn imkanı
+- Virtual AmmoBox System (VAS)
+- Takım liderlerinin kullanabileceği logistik destek sistemi 
+- Kırmızı takım için HALO jump
 
 Yan Görev Türleri :
 
