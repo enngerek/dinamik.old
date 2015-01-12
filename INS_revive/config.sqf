@@ -2,10 +2,10 @@
 
 // RESPAWN LOCATION list
 // You can define vehicle or object
-INS_REV_CFG_list_of_respawn_locations_blufor = ["base","mobile_1","air_1","boat_1"];
-INS_REV_CFG_list_of_respawn_locations_opfor = ["base2","car_1"];
+INS_REV_CFG_list_of_respawn_locations_blufor = ["base"];
+INS_REV_CFG_list_of_respawn_locations_opfor = ["base2"];
 INS_REV_CFG_list_of_respawn_locations_civ = [];
-INS_REV_CFG_list_of_respawn_locations_guer = ["mobile_1"];
+INS_REV_CFG_list_of_respawn_locations_guer = [];
 
 // RESPAWN DELAY TIME
 // You can define respawn delay time.
