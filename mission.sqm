@@ -23,7 +23,8 @@ class Mission
 		"cse_sys_groups",
 		"cse_sys_logistics",
 		"cse_sys_weaponheat",
-		"cse_ab_atragmx"
+		"cse_ab_atragmx",
+		"cse_sys_cc"
 	};
 	addOnsAuto[]=
 	{
@@ -47,6 +48,7 @@ class Mission
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Structures_F_Civ_InfoBoards",
 		"cse_ab_atragmx",
+		"cse_sys_cc",
 		"a3_map_altis"
 	};
 	randomSeed=4785077;
@@ -804,6 +806,7 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
+					text="redlider";
 				};
 				class Item1
 				{
@@ -895,112 +898,112 @@ class Mission
 		};
 		class Item6
 		{
-			position[]={14209.272,24.100965,16292.838};
-			id=30;
-			side="EMPTY";
-			vehicle="cse_advancedInteractionItems";
-			skill=0.60000002;
-		};
-		class Item7
-		{
 			position[]={14210.01,24.07539,16291.362};
-			id=31;
+			id=30;
 			side="EMPTY";
 			vehicle="cse_ballisticsItemsCrate";
 			skill=0.60000002;
 		};
-		class Item8
+		class Item7
 		{
 			position[]={14211.174,24.108006,16290.121};
-			id=32;
+			id=31;
 			side="EMPTY";
 			vehicle="cse_crateCombatDeafness";
 			skill=0.60000002;
 		};
-		class Item9
+		class Item8
 		{
 			position[]={14164.853,20.536654,16192.151};
 			azimut=24.474659;
-			id=33;
+			id=32;
 			side="EMPTY";
 			vehicle="Land_HelipadSquare_F";
 			skill=0.60000002;
 		};
-		class Item10
+		class Item9
 		{
 			position[]={11577.155,23.622713,11993.309};
 			azimut=-57.720901;
-			id=34;
+			id=33;
 			side="EMPTY";
 			vehicle="Land_InfoStand_V2_F";
 			skill=0.60000002;
 			init="this addAction[""Virtual Vehicle Spawner"",VVS_fnc_openVVS,[""aracspwn"",""All""]]; ";
 		};
-		class Item11
+		class Item10
 		{
 			position[]={11603.83,23.553303,11992.399};
 			azimut=-147.95326;
-			id=35;
+			id=34;
 			side="EMPTY";
 			vehicle="Land_HelipadSquare_F";
 			skill=0.60000002;
 		};
-		class Item12
+		class Item11
 		{
 			position[]={11588.248,23.42654,12016.978};
 			azimut=-134.392;
-			id=36;
+			id=35;
 			side="EMPTY";
 			vehicle="Box_NATO_AmmoVeh_F";
 			skill=0.60000002;
 			init="this addAction[""<t color='#ff1111'>Virtual Ammobox</t>"", ""VAS\open.sqf""];this addAction[""<t color='#ff9900'>HALO jump</t>"", ""ATM_airdrop\atm_airdrop.sqf""];this allowdammage false;clearItemCargoGlobal this;clearMagazineCargoGlobal this;clearWeaponCargoGlobal this;";
 		};
-		class Item13
+		class Item12
 		{
 			position[]={11588.402,23.408539,12018.797};
 			azimut=-134.39217;
-			id=37;
+			id=36;
 			side="EMPTY";
 			vehicle="cse_advancedInteractionItems";
 			skill=0.60000002;
 		};
-		class Item14
+		class Item13
 		{
 			position[]={11588.946,23.390385,12020.354};
 			azimut=-134.39217;
-			id=38;
+			id=37;
 			side="EMPTY";
 			vehicle="cse_ballisticsItemsCrate";
 			skill=0.60000002;
 		};
-		class Item15
+		class Item14
 		{
 			position[]={11589.011,23.374067,12022.056};
 			azimut=-134.39217;
-			id=39;
+			id=38;
 			side="EMPTY";
 			vehicle="cse_crateCombatDeafness";
 			skill=0.60000002;
 		};
-		class Item16
+		class Item15
 		{
 			position[]={14184.293,19.584854,16276.032};
-			id=40;
+			id=39;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";
 			skill=0.60000002;
 			text="base";
 			init="this allowdammage false;";
 		};
-		class Item17
+		class Item16
 		{
 			position[]={11609.322,23.360319,12009.161};
-			id=41;
+			id=40;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";
 			skill=0.60000002;
 			text="base2";
 			init="this allowdammage false;";
+		};
+		class Item17
+		{
+			position[]={14211.73,24.02494,16288.686};
+			id=41;
+			side="EMPTY";
+			vehicle="cse_ccItems_W";
+			skill=0.60000002;
 		};
 	};
 	class Markers
@@ -1624,7 +1627,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=2;
+		items=7;
 		class Item0
 		{
 			position[]={17415.541,42.57859,15528.541};
@@ -1649,6 +1652,86 @@ class Mission
 			age="UNKNOWN";
 			text="öldür";
 			expActiv="{_x setdammage 1} foreach list_to_kill";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={14174.007,19.57478,16277.921};
+			a=0;
+			b=0;
+			activationBy="JULIET";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Logistik İsteği : Sinek ";
+			expCond="this and typeOf player == ""B_Soldier_SL_F"";";
+			expActiv="[[["""",""B_Heli_Light_01_F"",""FncSupplyLight""],""supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
+			class Effects
+			{
+			};
+		};
+		class Item3
+		{
+			position[]={14172.223,19.570576,16279.292};
+			a=0;
+			b=0;
+			activationBy="INDIA";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Logistik İsteği : Jeep ";
+			expCond="this and typeOf player == ""B_Soldier_SL_F"";";
+			expActiv="[[["""",""B_MRAP_01_F"",""FncSupplyLight""],""Supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
+			class Effects
+			{
+			};
+		};
+		class Item4
+		{
+			position[]={14170.519,19.566502,16280.643};
+			a=0;
+			b=0;
+			activationBy="HOTEL";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			text="Logistik İsteği : Muhimmat";
+			expCond="this and typeOf player == ""B_Soldier_SL_F"";";
+			expActiv="[[["""",""Box_NATO_Support_F"",""FncSupplyVAS""],""supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
+			class Effects
+			{
+			};
+		};
+		class Item5
+		{
+			position[]={11598.363,23.606108,11977.057};
+			a=0;
+			b=0;
+			activationBy="DELTA";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			text="OPF Logistik İsteği : Jeep ";
+			expCond="this and typeOf player == ""O_recon_TL_F"";";
+			expActiv="[[["""",""O_MRAP_02_hmg_F"",""FncSupplyLight""],""supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
+			class Effects
+			{
+			};
+		};
+		class Item6
+		{
+			position[]={11596.659,23.606577,11978.407};
+			a=0;
+			b=0;
+			activationBy="CHARLIE";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			text="OPF Logistik İsteği : Muhimmat";
+			expCond="this and typeOf player == ""O_recon_TL_F"";";
+			expActiv="[[["""",""Box_NATO_Support_F"",""FncSupplyOPF""],""supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
 			class Effects
 			{
 			};

@@ -64,10 +64,7 @@ _markergO = createMarker ["_mob_tibbitahliye", _mrkSpawngorevtibbitah];
 	
 	//waitUntil { _yarali distance getPos _ambulans < 10 };
 	
-	_myHint ="Yaralı kişi arac bindirildi";
-	GlobalHint = _myHint;
-	publicVariable "GlobalHint";
-	hintsilent parseText _myHint;
+
 	
 	waitUntil { _yarali distance getMarkerPos "tabus" < 50 };
 	
@@ -1458,7 +1455,7 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 	_markerGO2 setMarkerColor "Colorred";
 	_markerGO2 setMarkerBrush "BORDER";
 	_markerGO2 setMarkerText " İstihbarata göre rehine buralarda bir yerde";
-	_markerGO2 setMarkerSize [100,100];
+	_markerGO2 setMarkerSize [75,75];
 	
 		[[_rehine1],"fnc_rec_rehinekurtar",true,true] spawn BIS_fnc_MP;
 	

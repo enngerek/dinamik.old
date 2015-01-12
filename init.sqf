@@ -28,10 +28,10 @@ call compile preprocessFileLineNumbers "removeTasks.sqf";
 call compile preprocessfile "globaltools.sqf";
 call compile preprocessfile "addactions.sqf";
 //call compile preprocessfile "eskiyisil.sqf";
-//call compile preprocessFileLineNumbers "fhqtt2.sqf"; 
-//execVM "randomWeather2.sqf";
+call compile preprocessFileLineNumbers "fhqtt2.sqf"; 
+execVM "randomWeather2.sqf";
 
 ["OPERASYON DİNAMİK","By engerek www.turkarmabirligi.net"] call ws_fnc_showIntro;
 
 nul = [] execVM "gorevsec.sqf"; 
-//nul = [] execVM "gorevler\tibbitahliye.sqf"; 
+nul = [] execVM "supplyInit.sqf"; 

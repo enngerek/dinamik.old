@@ -8,16 +8,15 @@ _callid = _this select 2;
 
 _capturer playMove "AinvPknlMstpSlayWrflDnon_medic";
 sleep 10;
-//_capturee setunitpos "auto";
-//_capturee setDammage 0;
-//_capturee playMove "stand";
-
-
 _arac=nearestObjects [_capturee, ["Car","air","support","armored"], 10];
 _enyakinarac = _arac select 0;
 _capturee moveincargo _enyakinarac;
+	_myHint ="Yaralý kiþi araca bindirildi";
+	GlobalHint = _myHint;
+	publicVariable "GlobalHint";
+	hintsilent parseText _myHint;
 [_capturee] joinSilent _capturer;
 _capturee enableAI "MOVE";
 _capturee enableAI "ANIM";
-
+_capturee removeAction _callid;
 if(true) exitWith{};
