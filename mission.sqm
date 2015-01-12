@@ -1666,7 +1666,6 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="Logistik İsteği : Sinek ";
-			expCond="this and typeOf player == ""B_Soldier_SL_F"";";
 			expActiv="[[["""",""B_Heli_Light_01_F"",""FncSupplyLight""],""supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
 			class Effects
 			{
@@ -1682,7 +1681,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="Logistik İsteği : Jeep ";
-			expCond="this and typeOf player == ""B_Soldier_SL_F"";";
+			expCond="this ";
 			expActiv="[[["""",""B_MRAP_01_F"",""FncSupplyLight""],""Supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
 			class Effects
 			{
@@ -1698,7 +1697,6 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="Logistik İsteği : Muhimmat";
-			expCond="this and typeOf player == ""B_Soldier_SL_F"";";
 			expActiv="[[["""",""Box_NATO_Support_F"",""FncSupplyVAS""],""supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
 			class Effects
 			{
@@ -1714,7 +1712,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="OPF Logistik İsteği : Jeep ";
-			expCond="this and typeOf player == ""O_recon_TL_F"";";
+			expCond="this ";
 			expActiv="[[["""",""O_MRAP_02_hmg_F"",""FncSupplyLight""],""supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
 			class Effects
 			{
@@ -1730,7 +1728,6 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			text="OPF Logistik İsteği : Muhimmat";
-			expCond="this and typeOf player == ""O_recon_TL_F"";";
 			expActiv="[[["""",""Box_NATO_Support_F"",""FncSupplyOPF""],""supply.sqf""], ""BIS_fnc_execVM"", true] call BIS_fnc_MP;";
 			class Effects
 			{
