@@ -4,15 +4,15 @@
 //////////////////////////////////////////////////////////////////
 /*
 if (!isDedicated) then {
-    fnc_iedblow = {
-        _this addAction ["Blow IED", "scripts\iedblow.sqf", [], 1, false, true, "", ""];
+    fnc_tibbitahliye = {
+        _this addAction ["Araca yükl", "scripts\tibbitahliye.sqf", [], 1, false, true, "", ""];
     };
-    iedblow = [];
-    "iedblow" addPublicVariableEventHandler {(_this select 1) call fnc_iedblow};
+    tibbitahliye = [];
+    "tibbitahliye" addPublicVariableEventHandler {(_this select 1) call fnc_iedblow};
 };
 */
 if (!isDedicated) then {
-    fnc_escolta = {
+    fnc_eskortet = {
         _this addAction ["<t color='#FF6600'>Beni Takip Et</t>", "scripts\arrest.sqf", nil, 6, true, true, "", ""];
     };
     eskortet = [];
@@ -34,6 +34,16 @@ if (!isDedicated) then {
     uavdata = [];
     "uavdata" addPublicVariableEventHandler {(_this select 1) call fnc_uavdata};
 };
+
+
+
+
+
+
+/*
+
+
+
 
 fnc_rec_daimha = {
 	private ["_pow"];
@@ -59,4 +69,4 @@ fnc_rec_tibbitahliye = {
 	private ["_pow"];
 	_pow = _this select 0;
 	_pow addAction ["<t color='#FF6600'>Araca yükle</t>", "scripts\tibbitahliye.sqf", nil, 6, true, true, "", ""];
-};
+};*/

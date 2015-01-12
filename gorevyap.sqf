@@ -52,7 +52,9 @@ _markergO = createMarker ["_mob_tibbitahliye", _mrkSpawngorevtibbitah];
 //_ambulans=createVehicle ["B_Heli_Light_01_F", getMarkerpos "oparaclari" , [], 0, "NONE"];
 	
 /////////////////////////////////////
-[[_yarali],"fnc_rec_tibbitahliye",true,true] spawn BIS_fnc_MP;
+//[[_yarali],"fnc_rec_tibbitahliye",true,true] spawn BIS_fnc_MP;
+tibbitahliye = _yarali;
+	publicVariable "tibbitahliye";
 ////////////////////////////////////////////////	
 	_tim1 = [getMarkerPos _markergO, resistance, ["I_G_Soldier_SL_F", "I_G_Soldier_TL_F","I_G_Soldier_AR_F","I_G_Soldier_AR_F","I_G_Soldier_GL_F","I_G_Soldier_GL_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_Soldier_LAT_F","I_G_medic_F"]
 ] call BIS_fnc_spawnGroup;
@@ -1457,7 +1459,9 @@ _rehmrkSpawnPos = getMarkerPos _rehsecilenarray;
 	_markerGO2 setMarkerText " İstihbarata göre rehine buralarda bir yerde";
 	_markerGO2 setMarkerSize [75,75];
 	
-		[[_rehine1],"fnc_rec_rehinekurtar",true,true] spawn BIS_fnc_MP;
+		//[[_rehine1],"fnc_rec_rehinekurtar",true,true] spawn BIS_fnc_MP;
+		eskortet = _rehine1;
+	publicVariable "eskortet";
 	
 	_markerrehine = createMarker ["rehinemarker", getPos _rehine1];
 	_markerrehine setMarkerType "hd_dot";
@@ -1577,7 +1581,9 @@ sleep 1;
 	_denizalti = createVehicle ["Submarine_01_F", getmarkerpos _markerGO,[], 0, "NONE"];
 	sleep 2;
 	
-	[[_denizalti],"fnc_rec_daimha",true,true] spawn BIS_fnc_MP;
+	//[[_denizalti],"fnc_rec_daimha",true,true] spawn BIS_fnc_MP;
+	sabotageSSN = _denizalti;
+	publicVariable "sabotageSSN";
 	
 	_grpdevboat1 = createGroup resistance;
 	
@@ -1726,12 +1732,15 @@ _mrkSpawnPos = getMarkerPos _maksecilenarray;
 	removeBackpack _pilot1;
 	removeGoggles _pilot1;
 	
-	[[_pilot1],"fnc_rec_rehkurtar",true,true] spawn BIS_fnc_MP;
+	//[[_pilot1],"fnc_rec_rehkurtar",true,true] spawn BIS_fnc_MP;
 	
 	_markerpilot = createMarker ["pilotmarker", getPos _wreck];
 	_markerpilot setMarkerType "b_plane";
 	_markerpilot setMarkerColor "ColorBlue";
 	_markerpilot setMarkerSize [0.7,0.7];
+	
+	eskortet = _pilot1;
+	publicVariable "eskortet";
 	
 	_IRgren = createVehicle ["B_IRStrobe", _newPos, [], 0, "NONE"];
 	
@@ -1830,7 +1839,9 @@ _mrkSpawnPos = getMarkerPos _uavsecilenarray;
 	_uav = "O_UAV_02_F" createVehicle _newPos;
 	sleep 2;
 	_uav setDammage 0.3;
-	[[_uav ],"fnc_rec_uavdata",true,true] spawn BIS_fnc_MP;
+	//[[_uav ],"fnc_rec_uavdata",true,true] spawn BIS_fnc_MP;
+	uavdata = _uav;
+	publicVariable "uavdata";
 	sleep 1;
 	_markeruav = createMarker ["uavmarker", getPos _uav];
 	_markeruav setMarkerType "o_uav";
