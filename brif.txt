@@ -9,6 +9,8 @@ Genel Özellikleri
 - 4 kişilik Düşman Oyuncu slotu vardır.İstenirse 4 oyuncu bu slotlarda oyuna girerek karşı tarafın görevleri tamamlamasını engellemeye çalışabilir.(COOP-TVT)
 - INS revive : Yaralı oyuncu markerı, diğer oyuncu veya üsten respawn imkanı
 - Virtual AmmoBox System (VAS)
+- Virtual Vehicle Spawner (VVS)
+- Rastgele Hava Durumu
 - Takım liderlerinin kullanabileceği logistik destek sistemi 
 - Kırmızı takım için HALO jump
 
