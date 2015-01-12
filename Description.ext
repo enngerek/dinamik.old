@@ -25,12 +25,12 @@ allowFunctionsRecompile = 1;
 
 
 #include "ATM_airdrop\dialog.hpp"
-#include "INS_revive\description.hpp"
+//#include "INS_revive\description.hpp"
 #include "VVS\menu.h"
 #include "VAS\menu.hpp"
 
 class Params
-{
+{/*
 	// Example Parameter
 	class EmtpyLine0 {
 		title = ":: Mission Settings";
@@ -47,20 +47,21 @@ class Params
 	};
 	
 	//// Respawn Script - Start ////
-	#include "INS_revive\params.hpp"
+	//#include "INS_revive\params.hpp"
 	//// Respawn Script - End   ////
+*/
 };
 
 class RscTitles
 {
 	//// Respawn Script - Start ////
-	#include "INS_revive\rsctitles.hpp"
+	//#include "INS_revive\rsctitles.hpp"
 	//// Respawn Script - End   ////
 };
 
 class CfgSounds
 {
-#include "INS_revive\cfgsounds.hpp"
+//#include "INS_revive\cfgsounds.hpp"
 
 sounds[] = {Vent,Vent2,Para};
 
@@ -78,7 +79,7 @@ class CfgFunctions
 {
 	#include "VAS\cfgfunctions.hpp"
         #include "ws_fnc\config.hpp"
-		#include "INS_revive\cfgfunctions.hpp"
+		//#include "INS_revive\cfgfunctions.hpp"
 #include "VVS\Functions.h"
 };
 

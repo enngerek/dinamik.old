@@ -1,4 +1,5 @@
-﻿// Disable Saving
+﻿/*
+// Disable Saving
 enableSaving [false, false];
 
 // JIP Check (This code should be placed first line of init.sqf file)
@@ -20,7 +21,7 @@ waitUntil {!isNil "INS_REV_FNCT_init_completed"};
 if (isServer) then {
 	skipTime PARAM_TimeOfDay;
 };
-
+*/
 
 
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
