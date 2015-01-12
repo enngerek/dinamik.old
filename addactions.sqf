@@ -8,7 +8,7 @@ if (!isDedicated) then {
         _this addAction ["Araca yükl", "scripts\tibbitahliye.sqf", [], 1, false, true, "", ""];
     };
     tibbitahliye = [];
-    "tibbitahliye" addPublicVariableEventHandler {(_this select 1) call fnc_iedblow};
+    "tibbitahliye" addPublicVariableEventHandler {(_this select 1) call fnc_tibbitahliye};
 };
 */
 if (!isDedicated) then {
@@ -16,7 +16,7 @@ if (!isDedicated) then {
         _this addAction ["<t color='#FF6600'>Beni Takip Et</t>", "scripts\arrest.sqf", nil, 6, true, true, "", ""];
     };
     eskortet = [];
-    "eskortet" addPublicVariableEventHandler {(_this select 1) call fnc_escolta};
+    "eskortet" addPublicVariableEventHandler {(_this select 1) call fnc_eskortet};
 };
 
 if (!isDedicated) then {
