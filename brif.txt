@@ -1,5 +1,5 @@
 OPERASYON DİNAMİK
-Görev kısaca Altis Haritası genelinde tamamlanacak bir seri yan görevden oluşmaktadır.
+Görev kısaca Altis Haritası genelinde rastgele oluşturulan bir seri yan görevden oluşmaktadır.
 
 Genel Özellikleri
 
